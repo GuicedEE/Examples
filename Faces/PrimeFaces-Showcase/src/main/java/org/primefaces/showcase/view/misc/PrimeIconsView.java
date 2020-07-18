@@ -15,9 +15,9 @@
  */
 package org.primefaces.showcase.view.misc;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import org.primefaces.shaded.json.JSONArray;
+import org.primefaces.shaded.json.JSONException;
+import org.primefaces.shaded.json.JSONObject;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
@@ -35,11 +35,11 @@ import java.util.logging.Logger;
 public class PrimeIconsView implements Serializable {
 
     private List<Icon> icons;
-
+    
     @PostConstruct
     public void init() {
         icons = new ArrayList<>();
-
+        
         String url = "https://raw.githubusercontent.com/primefaces/primeicons/2.0.0/selection.json";
         try {
             JSONObject json = readJsonFromUrl(url);
@@ -81,12 +81,12 @@ public class PrimeIconsView implements Serializable {
     public void setIcons(List<Icon> icons) {
         this.icons = icons;
     }
-
+    
     public class Icon {
-
+        
         private String name;
         private int key;
-
+        
         public Icon(String name, int key) {
             this.name = name;
             this.key = key;

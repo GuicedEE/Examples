@@ -137,11 +137,11 @@
          */
         windowContext: null,
 
-        /**
+        /** 
          menu orientation for PrimeFaces Layouts
          @property isRTL
          @type Boolean
-         @default false
+         @default false 
          */
         isRTL: false
     };

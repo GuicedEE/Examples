@@ -13,6 +13,11 @@
     <packaging>jar</packaging>
 
     <name>primefaces-showcase</name>
+	
+	<properties>
+		<jsfVersion>GuicedJSF ${project.version}</jsfVersion>
+		<primefacesVersion>PrimeFaces-9.0-SNAPSHOT</primefacesVersion>
+	</properties>
 
     <dependencies>
         <dependency>
@@ -58,6 +63,10 @@
     </dependencies>
 
     <build>
+		<filters>
+            <filter>${basedir}/src/main/resources/filters/mojarra.properties</filter>
+        </filters>
+				
         <resources>
             <resource>
                 <directory>src/main/resources</directory>

@@ -19,6 +19,7 @@
 
     <modules>
         <module>PrimeFaces-Showcase</module>
+        <module>PrimeFaces-Showcase-Distributable</module>
     </modules>
 
     <scm>

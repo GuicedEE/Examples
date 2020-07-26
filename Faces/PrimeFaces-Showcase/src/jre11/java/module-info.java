@@ -19,6 +19,7 @@ open module com.guicedee.examples.faces.primefaces.showcase {
 	requires jakarta.enterprise.cdi;
 
 	requires jfreechart;
+	requires com.guicedee.guicedservlets.undertow;
 
 	provides com.guicedee.guicedservlets.undertow.services.UndertowDeploymentConfigurator with com.guicedee.primefaces.showcase.implementations.ShowcaseDeploymentConfiguration;
 }

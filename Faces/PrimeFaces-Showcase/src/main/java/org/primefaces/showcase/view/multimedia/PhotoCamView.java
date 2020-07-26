@@ -48,7 +48,7 @@ public class PhotoCamView implements Serializable {
         byte[] data = captureEvent.getData();
 
         ExternalContext externalContext = FacesContext.getCurrentInstance().getExternalContext();
-        String newFileName = externalContext.getRealPath("") + File.separator + "resources" + File.separator + "demo" +
+        String newFileName = externalContext.getRealPath("") + File.separator + "META-INF/resources" + File.separator + "demo" +
                                     File.separator + "images" + File.separator + "photocam" + File.separator + filename + ".jpeg";
 		
 		FileImageOutputStream imageOutput;

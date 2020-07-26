@@ -4,6 +4,7 @@ import com.guicedee.guicedservlets.undertow.services.UndertowDeploymentConfigura
 import io.undertow.servlet.api.DeploymentInfo;
 import io.undertow.servlet.api.ErrorPage;
 import io.undertow.servlet.api.FilterInfo;
+import io.undertow.servlet.api.ServletInfo;
 
 public class ShowcaseDeploymentConfiguration implements UndertowDeploymentConfigurator
 {
@@ -23,6 +24,7 @@ public class ShowcaseDeploymentConfiguration implements UndertowDeploymentConfig
 		deploymentInfo.addInitParameter("primefaces.CSP","false");
 		deploymentInfo.addInitParameter("primefaces.TRANSFORM_METADATA","true");
 		deploymentInfo.addInitParameter("com.sun.faces.numberOfViewsInSession","5");
+		deploymentInfo.addInitParameter("primefaces.MULTI_VIEW_STATE_STORE","client-window");
 		deploymentInfo.addInitParameter("com.sun.faces.serializeServerState","false");
 
 		deploymentInfo.addFilter(new FilterInfo("Character Encoding Filter", org.primefaces.showcase.filter.CharacterEncodingFilter.class));

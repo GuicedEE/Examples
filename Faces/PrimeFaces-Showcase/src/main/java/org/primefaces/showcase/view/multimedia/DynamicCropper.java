@@ -105,7 +105,7 @@ public class DynamicCropper implements Serializable {
             setNewImageName(imageName);
             ExternalContext externalContext = FacesContext.getCurrentInstance().getExternalContext();
             
-            Path path = Paths.get(externalContext.getRealPath(""), "META-INF/resources", "demo", "images", "crop", imageName);
+            Path path = Paths.get(externalContext.getRealPath(""), "resources", "demo", "images", "crop", imageName);
              
             FileImageOutputStream imageOutput;
             try {

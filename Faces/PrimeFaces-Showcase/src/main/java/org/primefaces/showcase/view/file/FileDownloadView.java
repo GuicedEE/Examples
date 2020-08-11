@@ -32,7 +32,7 @@ public class FileDownloadView {
         file = DefaultStreamedContent.builder()
                 .name("downloaded_boromir.jpg")
                 .contentType("image/jpg")
-                .stream(() -> FacesContext.getCurrentInstance().getExternalContext().getResourceAsStream("/META-INF/resources/demo/images/boromir.jpg"))
+                .stream(() -> FacesContext.getCurrentInstance().getExternalContext().getResourceAsStream("/resources/demo/images/boromir.jpg"))
                 .build();
     }
 

@@ -48,7 +48,7 @@ public class CropperView {
 		
 		setNewImageName(getRandomImageName());
 		ExternalContext externalContext = FacesContext.getCurrentInstance().getExternalContext();
-		String newFileName = externalContext.getRealPath("") + File.separator + "META-INF/resources" + File.separator + "demo" +
+		String newFileName = externalContext.getRealPath("") + File.separator + "resources" + File.separator + "demo" +
                     File.separator + "images" + File.separator + "crop" + File.separator + getNewImageName() + ".jpg";
 		
 		FileImageOutputStream imageOutput;

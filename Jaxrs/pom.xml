@@ -26,7 +26,6 @@
             <groupId>com.guicedee.servlets</groupId>
             <artifactId>guiced-rest-services</artifactId>
             <version>${project.version}</version>
-            <type>jar</type>
         </dependency>
     </dependencies>
 

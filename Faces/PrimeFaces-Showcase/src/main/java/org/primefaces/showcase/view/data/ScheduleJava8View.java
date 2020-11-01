@@ -60,10 +60,11 @@ public class ScheduleJava8View implements Serializable {
 	private boolean showWeekends = true;
 	private boolean tooltip = true;
 	private boolean allDaySlot = true;
+	private boolean rtl = false;
 
 	private double aspectRatio = Double.MIN_VALUE;
 
-	private String leftHeaderTemplate = "prev, next, today";
+	private String leftHeaderTemplate = "prev,next today";
 	private String centerHeaderTemplate = "title";
 	private String rightHeaderTemplate = "dayGridMonth,timeGridWeek,timeGridDay,listYear";
 	private String nextDayThreshold = "09:00:00";
@@ -82,6 +83,7 @@ public class ScheduleJava8View implements Serializable {
 	private String clientTimeZone = "local";
 	private String columnHeaderFormat = "";
 	private String view = "timeGridWeek";
+	private String height = "auto";
 
 	private String extenderCode = "// Write your code here or select an example from above";
 	private String selectedExtenderExample = "";
@@ -97,6 +99,7 @@ public class ScheduleJava8View implements Serializable {
 				.startDate(previousDay8Pm())
 				.endDate(previousDay11Pm())
 				.description("Team A vs. Team B")
+				.url("https://www.uefa.com/uefachampionsleague/")
 				.build();
 		eventModel.addEvent(event);
 
@@ -246,6 +249,8 @@ public class ScheduleJava8View implements Serializable {
 
 	public void onViewChange(SelectEvent<String> selectEvent) {
 		view = selectEvent.getObject();
+		FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "View Changed", "View:" + view);
+		addMessage(message);
 	}
 
 	public void onDateSelect(SelectEvent<LocalDateTime> selectEvent) {
@@ -341,6 +346,14 @@ public class ScheduleJava8View implements Serializable {
 
 	public void setTooltip(boolean tooltip) {
 		this.tooltip = tooltip;
+	}
+	
+	public boolean isRtl() {
+		return rtl;
+	}
+
+	public void setRtl(boolean rtl) {
+		this.rtl = rtl;
 	}
 
 	public boolean isAllDaySlot() {
@@ -529,6 +542,14 @@ public class ScheduleJava8View implements Serializable {
 
 	public void setExtenderCode(String extenderCode) {
 		this.extenderCode = extenderCode;
+	}
+
+	public String getHeight() {
+		return height;
+	}
+
+	public void setHeight(String height) {
+		this.height = height;
 	}
 
 	public List<SelectItem> getExtenderExamples() {

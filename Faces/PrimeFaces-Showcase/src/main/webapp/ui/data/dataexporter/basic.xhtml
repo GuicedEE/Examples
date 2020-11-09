@@ -19,7 +19,9 @@
     </ui:define>
 
     <ui:define name="description">
-        EXCEL, PDF, CSV and XML are the supported formats.
+        EXCEL, PDF, CSV and XML are the supported formats.<br/>
+        The datatable columns content will be justified as left aligned, center aligned and right aligned based on the content type.
+        If a style or styleClass contains the word "right" the cell will be right aligned in the Excel/PDF output.
     </ui:define>
 
     <ui:param name="documentationLink" value="/components/dataexporter" />
@@ -73,14 +75,14 @@
                     <h:outputText value="#{car.id}" />
                 </p:column>
 
-                <p:column>
+                <p:column style="text-align:right">
                     <f:facet name="header">
                         <h:outputText value="Year"/>
                     </f:facet>
                     <h:outputText value="#{car.year}" />
                 </p:column>
 
-                <p:column>
+                <p:column styleClass="column-center">
                     <f:facet name="header">
                         <h:outputText value="Brand" />
                     </f:facet>
@@ -95,26 +97,30 @@
                 </p:column>
             </p:dataTable>
 
-            <h3>Export Page Data Only</h3>
-            <h:commandLink>
-                <p:graphicImage name="/demo/images/excel.png" />
+            <h3>Ajax-Export, pageOnly="true"</h3>
+            <p:commandButton value="XLS">
                 <p:dataExporter type="xls" target="tbl" fileName="cars" pageOnly="true"/>
-            </h:commandLink>
+            </p:commandButton>
 
-            <h:commandLink>
-                <p:graphicImage name="/demo/images/pdf.png" />
+            <p:commandButton value="XLXS">
+                <p:dataExporter type="xlsxstream" target="tbl" fileName="cars" pageOnly="true"/>
+            </p:commandButton>
+
+            <p:commandButton value="PDF" ajax="false">
                 <p:dataExporter type="pdf" target="tbl" fileName="cars" pageOnly="true" />
-            </h:commandLink>
+            </p:commandButton>
 
-            <h:commandLink>
-                <p:graphicImage name="/demo/images/csv.png" />
+            <p:commandButton value="CSV">
                 <p:dataExporter type="csv" target="tbl" fileName="cars" pageOnly="true" />
-            </h:commandLink>
+            </p:commandButton>
 
-            <h:commandLink>
-                <p:graphicImage name="/demo/images/xml.png" />
+            <p:commandButton value="XML">
                 <p:dataExporter type="xml" target="tbl" fileName="cars" pageOnly="true" />
-            </h:commandLink>
+            </p:commandButton>
+
+            <p:commandButton value="TXT">
+                <p:dataExporter type="txt" target="tbl" fileName="cars" pageOnly="true" exporter="#{dataExporterView.textExporter}" />
+            </p:commandButton>
         </h:form>
 
     </ui:define>

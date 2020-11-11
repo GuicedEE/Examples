@@ -17,8 +17,8 @@ package org.primefaces.showcase.service;
 
 import org.primefaces.showcase.domain.Car;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Named;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Named;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

@@ -13,9 +13,9 @@ open module com.guicedee.examples.faces.primefaces.showcase {
 
 	requires org.ehcache;
 
-	requires javax.faces;
-	requires javax.servlet.jsp;
-	requires javax.servlet.jsp.jstl;
+	requires jakarta.faces;
+	requires jakarta.servlet.jsp;
+	requires jakarta.servlet.jsp.jstl;
 	requires jakarta.enterprise.cdi;
 
 	requires jfreechart;

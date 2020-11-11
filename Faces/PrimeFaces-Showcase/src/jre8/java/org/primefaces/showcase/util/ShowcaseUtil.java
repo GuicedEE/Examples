@@ -4,11 +4,11 @@ import com.guicedee.guicedinjection.GuiceContext;
 import org.primefaces.cache.CacheProvider;
 import org.primefaces.component.tabview.Tab;
 
-import javax.faces.application.ProjectStage;
-import javax.faces.component.UIComponent;
-import javax.faces.component.UIPanel;
-import javax.faces.context.FacesContext;
-import javax.inject.Named;
+import jakarta.faces.application.ProjectStage;
+import jakarta.faces.component.UIComponent;
+import jakarta.faces.component.UIPanel;
+import jakarta.faces.context.FacesContext;
+import jakarta.inject.Named;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collections;

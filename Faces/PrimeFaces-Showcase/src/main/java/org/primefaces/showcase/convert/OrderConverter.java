@@ -18,10 +18,10 @@ package org.primefaces.showcase.convert;
 import java.io.Serializable;
 import java.util.List;
 
-import javax.faces.component.UIComponent;
-import javax.faces.context.FacesContext;
-import javax.faces.convert.Converter;
-import javax.faces.convert.FacesConverter;
+import jakarta.faces.component.UIComponent;
+import jakarta.faces.context.FacesContext;
+import jakarta.faces.convert.Converter;
+import jakarta.faces.convert.FacesConverter;
 
 import org.primefaces.model.timeline.TimelineEvent;
 import org.primefaces.showcase.domain.Order;

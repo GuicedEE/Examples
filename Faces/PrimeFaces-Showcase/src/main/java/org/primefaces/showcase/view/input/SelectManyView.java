@@ -18,10 +18,10 @@ package org.primefaces.showcase.view.input;
 import org.primefaces.showcase.domain.Theme;
 import org.primefaces.showcase.service.ThemeService;
 
-import javax.annotation.PostConstruct;
-import javax.enterprise.context.RequestScoped;
-import javax.inject.Inject;
-import javax.inject.Named;
+import jakarta.annotation.PostConstruct;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
 import java.util.List;
 
 @Named

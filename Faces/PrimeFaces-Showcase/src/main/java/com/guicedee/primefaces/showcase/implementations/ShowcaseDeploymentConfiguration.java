@@ -12,7 +12,7 @@ public class ShowcaseDeploymentConfiguration implements UndertowDeploymentConfig
 		deploymentInfo.addInitParameter("jakarta.faces.STATE_SAVING_METHOD","server");
 		deploymentInfo.addInitParameter("jakarta.faces.PROJECT_STAGE","Development");
 		deploymentInfo.addInitParameter("jakarta.faces.DATETIMECONVERTER_DEFAULT_TIMEZONE_IS_SYSTEM_TIMEZONE","true");
-		deploymentInfo.addInitParameter("jakarta.faces.INTERPRET_EMPTY_STRING_SUBMITTED_VALUES_AS_NULL","false");
+		deploymentInfo.addInitParameter("jakarta.faces.INTERPRET_EMPTY_STRING_SUBMITTED_VALUES_AS_NULL","true");
 		deploymentInfo.addInitParameter("primefaces.PRIVATE_CAPTCHA_KEY","6Lf2XQkTAAAAAHsc1-7Mt_kMlmcmGqlxoMDJlp2K");
 		deploymentInfo.addInitParameter("primefaces.PUBLIC_CAPTCHA_KEY","6Lf2XQkTAAAAANcvOwYqPxWL4iZDksFqHpS39GDA");
 		deploymentInfo.addInitParameter("primefaces.CLIENT_SIDE_VALIDATION","true");

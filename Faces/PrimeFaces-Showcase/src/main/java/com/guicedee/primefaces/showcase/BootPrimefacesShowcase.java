@@ -12,11 +12,15 @@ public class BootPrimefacesShowcase
 		int port = 7950;
 
 		LogFactory.configureConsoleSingleLineOutput(Level.FINER);
+		LogFactory.configureDefaultLogHiding();
+
+		LogFactory.setGroupLevel("javax.faces", Level.CONFIG);
+		LogFactory.setGroupLevel("jakarta.faces", Level.CONFIG);
 
 		GuicedUndertow undertow = new GuicedUndertow();
 		undertow.setHttp2(true);
 		undertow.setHost("0.0.0.0");
-		undertow.setPort(port);
+		undertow.setPort(port);ta
 		undertow.bootMe();
 		System.out.println("Started");
 	}

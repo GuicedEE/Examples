@@ -1,3 +1,5 @@
+import com.guicedee.primefaces.showcase.implementations.ShowcaseModuleInclusion;
+
 open module com.guicedee.examples.faces.primefaces.showcase {
 	requires primefaces;
 
@@ -22,4 +24,6 @@ open module com.guicedee.examples.faces.primefaces.showcase {
 	requires com.guicedee.guicedservlets.undertow;
 
 	provides com.guicedee.guicedservlets.undertow.services.UndertowDeploymentConfigurator with com.guicedee.primefaces.showcase.implementations.ShowcaseDeploymentConfiguration;
+	provides com.guicedee.guicedinjection.interfaces.IGuiceScanModuleInclusions with ShowcaseModuleInclusion;
+	
 }

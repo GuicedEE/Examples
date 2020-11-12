@@ -16,6 +16,8 @@ public class BootPrimefacesShowcase
 
 		LogFactory.setGroupLevel("javax.faces", Level.CONFIG);
 		LogFactory.setGroupLevel("jakarta.faces", Level.CONFIG);
+		LogFactory.setGroupLevel("jakarta.enterprise.resource.webcontainer.jsf.application", Level.CONFIG);
+		LogFactory.setGroupLevel("jakarta.enterprise.resource.webcontainer.jsf.config", Level.CONFIG);
 
 		GuicedUndertow undertow = new GuicedUndertow();
 		undertow.setHttp2(true);

@@ -33,8 +33,6 @@ public class ShowcaseDeploymentConfiguration implements UndertowDeploymentConfig
 		deploymentInfo.addErrorPage(new ErrorPage("/viewExpired.xhtml", jakarta.faces.application.ViewExpiredException.class));
 		deploymentInfo.addErrorPage(new ErrorPage("/error.xhtml", 404));
 
-		
-		
 		deploymentInfo.addWelcomePage("/index.xhtml");
 
 		return deploymentInfo;

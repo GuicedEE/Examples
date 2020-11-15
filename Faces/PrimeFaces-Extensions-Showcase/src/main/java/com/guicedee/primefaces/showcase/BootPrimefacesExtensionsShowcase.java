@@ -11,7 +11,7 @@ public class BootPrimefacesExtensionsShowcase
 {
 	public static void main(String[] args) throws Exception
 	{
-		int port = 7950;
+		int port = 7960;
 
 		GuiceContext.instance().getConfig().setIncludeModuleAndJars(true);
 

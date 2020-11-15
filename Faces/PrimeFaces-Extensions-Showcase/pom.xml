@@ -17,7 +17,14 @@
 	<properties>
 		<jsfVersion>GuicedJSF ${project.version}</jsfVersion>
 		<primefacesVersion>PrimeFaces-9.0-SNAPSHOT</primefacesVersion>
-	</properties>
+
+        <primefaces-extensions.core.version>${project.version}</primefaces-extensions.core.version>
+        <primefaces-extensions.new-components>renderers;timeago;fab;creditcard;fuzzysearch;counter;codeScanner
+        </primefaces-extensions.new-components>
+        <primefaces-extensions.updated-components>sheet;letteravatar;inputphone</primefaces-extensions.updated-components>
+        <primefaces-extensions.deprecated-components>exporter;social</primefaces-extensions.deprecated-components>
+
+    </properties>
 
     <dependencies>
         <dependency>

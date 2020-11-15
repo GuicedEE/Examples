@@ -90,7 +90,7 @@ public class TechnicalInfo {
             }
 
             buildTime = "Build time: " + formatter.format(calendar.getTime());
-            mojarra = appProperties.get("jsf-impl").contains("mojarra");
+            mojarra = true;
 
             // process new and updated components
             processComponentTypes(appProperties.get("primefaces-extensions.new-components"),

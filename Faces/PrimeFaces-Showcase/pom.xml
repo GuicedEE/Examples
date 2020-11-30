@@ -37,6 +37,11 @@
 
         <dependency>
             <groupId>com.guicedee.services</groupId>
+            <artifactId>jakarta.ws.rs-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.guicedee.services</groupId>
             <artifactId>ehcache</artifactId>
         </dependency>
 

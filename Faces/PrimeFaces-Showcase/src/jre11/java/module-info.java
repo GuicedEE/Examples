@@ -10,6 +10,7 @@ open module com.guicedee.examples.faces.primefaces.showcase {
 	requires com.github.librepdf.openpdf;
 
 	requires undertow.servlet;
+	requires jakarta.ws.rs;
 
 	requires com.hazelcast.all;
 

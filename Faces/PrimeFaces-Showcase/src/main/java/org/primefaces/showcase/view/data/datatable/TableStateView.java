@@ -24,13 +24,14 @@ import jakarta.annotation.PostConstruct;
 import jakarta.enterprise.context.SessionScoped;
 import jakarta.faces.application.FacesMessage;
 import jakarta.faces.context.FacesContext;
+import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
 import java.io.Serializable;
 import java.util.List;
 
 @Named("dtTableStateView")
-@SessionScoped
+@ViewScoped
 public class TableStateView implements Serializable {
     
     private List<Car> cars;

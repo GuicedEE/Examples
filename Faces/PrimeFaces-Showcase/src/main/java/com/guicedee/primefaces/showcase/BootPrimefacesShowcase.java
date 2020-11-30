@@ -18,11 +18,11 @@ public class BootPrimefacesShowcase
 
 		GuiceContext.instance().getConfig().setIncludeModuleAndJars(true);
 
-		LogFactory.setGroupLevel("javax.faces", Level.CONFIG);
 		LogFactory.setGroupLevel("jakarta.faces", Level.CONFIG);
-		LogFactory.setGroupLevel("javax.enterprise.resource.webcontainer.jsf.application", Level.CONFIG);
+		LogFactory.setGroupLevel("jakarta.faces", Level.CONFIG);
 		LogFactory.setGroupLevel("jakarta.enterprise.resource.webcontainer.jsf.application", Level.CONFIG);
-		LogFactory.setGroupLevel("javax.enterprise.resource.webcontainer.jsf.config", Level.CONFIG);
+		LogFactory.setGroupLevel("jakarta.enterprise.resource.webcontainer.jsf.application", Level.CONFIG);
+		LogFactory.setGroupLevel("jakarta.enterprise.resource.webcontainer.jsf.config", Level.CONFIG);
 		LogFactory.configureDefaultLogHiding();
 		LogFactory.configureConsoleSingleLineOutput(Level.CONFIG);
 

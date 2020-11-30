@@ -18,8 +18,8 @@
 
 
     <modules>
-        <module>PrimeFaces-Showcase</module>
-		<module>PrimeFaces-Extensions-Showcase</module>
+        <!--<module>PrimeFaces-Showcase</module>
+		<module>PrimeFaces-Extensions-Showcase</module>-->
     </modules>
 
     <scm>

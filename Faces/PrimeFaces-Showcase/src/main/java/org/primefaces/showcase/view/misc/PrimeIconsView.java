@@ -15,9 +15,9 @@
  */
 package org.primefaces.showcase.view.misc;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import org.primefaces.shaded.json.JSONArray;
+import org.primefaces.shaded.json.JSONException;
+import org.primefaces.shaded.json.JSONObject;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.enterprise.context.ApplicationScoped;

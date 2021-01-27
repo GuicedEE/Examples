@@ -11,7 +11,7 @@ open module com.guicedee.examples.faces.primefaces.extensions.showcase {
 	requires java.desktop;
 	requires jakarta.enterprise.cdi;
 	requires org.apache.commons.collections4;
-	requires org.apache.poi;
+	requires org.apache.poi.poi;
 	requires org.apache.poi.ooxml;
 	requires org.json;
 

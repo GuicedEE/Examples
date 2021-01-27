@@ -6,7 +6,7 @@ open module com.guicedee.examples.faces.primefaces.showcase {
 	requires jakarta.annotation;
 	requires java.desktop;
 	requires org.json;
-	requires org.apache.poi;
+	requires org.apache.poi.poi;
 	requires com.github.librepdf.openpdf;
 
 	requires undertow.servlet;

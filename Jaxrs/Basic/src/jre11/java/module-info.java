@@ -4,6 +4,7 @@ import com.guicedee.guicedinjection.interfaces.IGuiceModule;
 module com.guicedee.examples.jaxrs.basic {
 	requires com.guicedee.guicedservlets.rest;
 	requires com.guicedee.guicedservlets.undertow;
+	
 	requires java.net.http;
 
 	provides IGuiceModule with RestBinding;

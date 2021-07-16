@@ -16,7 +16,7 @@
 	
 	<properties>
 		<jsfVersion>GuicedJSF ${project.version}</jsfVersion>
-		<primefacesVersion>PrimeFaces-9.0-SNAPSHOT</primefacesVersion>
+		<primefacesVersion>${primefaces.version}</primefacesVersion>
 
         <primefaces-extensions.core.version>${project.version}</primefaces-extensions.core.version>
         <primefaces-extensions.new-components>renderers;timeago;fab;creditcard;fuzzysearch;counter;codeScanner

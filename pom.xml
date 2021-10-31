@@ -18,7 +18,7 @@
 
 	<profiles>
 		<profile>
-			<id>jdk9</id>
+			<id>enable-guicedee</id>
 			    <modules>
 				<module>Faces</module>
 				<module>Hazelcast</module>
@@ -38,7 +38,7 @@
                 <artifactId>guicedee-bom</artifactId>
                 <type>pom</type>
                 <scope>import</scope>
-                <version>${project.version}</version>
+                <version>${guicedee.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

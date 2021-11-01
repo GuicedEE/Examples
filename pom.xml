@@ -16,7 +16,13 @@
     <name>GuicedEE Examples</name>
     <description>Examples to quickly kickstart your Guiced EE applications. These are designed to build on JDK 11 as examples on using modules and JLink for distribution</description>
 
-	<profiles>
+    <properties>
+        <ignore.moditect>true</ignore.moditect>
+        <flatten.pom>false</flatten.pom>
+    </properties>
+
+
+    <profiles>
 		<profile>
 			<id>enable-guicedee</id>
 			    <modules>

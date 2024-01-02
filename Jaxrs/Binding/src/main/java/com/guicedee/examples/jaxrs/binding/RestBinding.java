@@ -1,8 +1,8 @@
-package com.guicedee.examples.jaxrs.basic;
+package com.guicedee.examples.jaxrs.binding;
 
 import com.google.inject.AbstractModule;
-import com.guicedee.examples.jaxrs.basic.resources.DefaultGreeter;
-import com.guicedee.examples.jaxrs.basic.resources.Greeter;
+import com.guicedee.examples.jaxrs.binding.resources.DefaultGreeter;
+import com.guicedee.examples.jaxrs.binding.resources.Greeter;
 import com.guicedee.guicedinjection.interfaces.IGuiceModule;
 
 @SuppressWarnings("PointlessBinding")

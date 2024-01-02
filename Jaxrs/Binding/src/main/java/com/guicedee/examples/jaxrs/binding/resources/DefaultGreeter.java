@@ -1,4 +1,4 @@
-package com.guicedee.examples.jaxrs.basic.resources;
+package com.guicedee.examples.jaxrs.binding.resources;
 
 public class DefaultGreeter implements Greeter
 {

@@ -1,19 +1,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>com.guicedee.examples.jaxrs</groupId>
-        <artifactId>examples-jaxrs-parent</artifactId>
-        <version>0.0.0_0-SNAPSHOT</version>
-    </parent>
 
+    <groupId>com.guicedee.examples.jaxrs</groupId>
     <artifactId>jaxrs-basic-jlink</artifactId>
     <packaging>jlink</packaging>
+    <version>2.0.0-SNAPSHOT</version>
 
     <dependencies>
         <dependency>
-            <groupId></groupId>
-            <artifactId></artifactId>
+            <groupId>com.guicedee.examples</groupId>
+            <artifactId>jaxrs-basic-example</artifactId>
+            <version>2.0.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
@@ -21,7 +19,7 @@
         <plugins>
             <plugin>
                 <artifactId>maven-jlink-plugin</artifactId>
-                <version>3.0.0-alpha-2-SNAPSHOT</version>
+                <version>3.1.0</version>
                 <extensions>true</extensions>
                 <configuration>
                     <noHeaderFiles>true</noHeaderFiles>
@@ -29,11 +27,13 @@
                     <stripDebug>true</stripDebug>
                     <verbose>true</verbose>
                     <compress>2</compress>
+                    <launcher>example=com.guicedee.examples.jaxrs.basic/com.guicedee.examples.jaxrs.basic.HelloWorld</launcher>
                 </configuration>
                 <dependencies>
                     <dependency>
                         <groupId>org.ow2.asm</groupId>
                         <artifactId>asm</artifactId>
+                        <version>9.6</version>
                     </dependency>
                 </dependencies>
             </plugin>

@@ -1,4 +1,4 @@
-package com.guicedee.examples.jaxrs.basic.resources;
+package com.guicedee.examples.jaxrs.binding.resources;
 
 import com.google.inject.Inject;
 
@@ -11,6 +11,7 @@ import jakarta.ws.rs.Produces;
 @Produces("application/json")
 public class HelloResource
 {
+	//can also @Inject instead of constructor
 	private final Greeter greeter;
 
 	@Inject

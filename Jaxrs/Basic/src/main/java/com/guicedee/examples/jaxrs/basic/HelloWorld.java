@@ -8,6 +8,10 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
 
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
+import java.util.concurrent.TimeUnit;
+
 @Path("hello")
 @Produces("application/json")
 public class HelloWorld {
@@ -16,8 +20,12 @@ public class HelloWorld {
     public String hello(@PathParam("name") final String name) {
         return "Hello! " + name;
     }
+    
     public static void main(String[] args) throws Exception {
-        GuiceContext.instance().getConfig().setServiceLoadWithClassPath(true);
+        LocalDateTime startTime = LocalDateTime.now();
+        GuiceContext.registerModule("com.guicedee.examples.jaxrs.basic");
         GuicedUndertow.boot("0.0.0.0", 6003);
+        LocalDateTime endTime = LocalDateTime.now();
+        System.out.println("Started in " + ChronoUnit.MILLIS.between(startTime, endTime) + "ms");
     }
 }

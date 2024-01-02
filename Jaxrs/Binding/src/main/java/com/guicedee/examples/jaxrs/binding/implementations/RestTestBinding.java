@@ -1,4 +1,4 @@
-package com.guicedee.examples.jaxrs.binding;
+package com.guicedee.examples.jaxrs.binding.implementations;
 
 import com.google.inject.AbstractModule;
 import com.guicedee.examples.jaxrs.binding.resources.DefaultGreeter;
@@ -6,9 +6,9 @@ import com.guicedee.examples.jaxrs.binding.resources.Greeter;
 import com.guicedee.guicedinjection.interfaces.IGuiceModule;
 
 @SuppressWarnings("PointlessBinding")
-public class RestBinding
+public class RestTestBinding
 		extends AbstractModule
-		implements IGuiceModule<RestBinding>
+		implements IGuiceModule<RestTestBinding>
 {
 
 	@Override

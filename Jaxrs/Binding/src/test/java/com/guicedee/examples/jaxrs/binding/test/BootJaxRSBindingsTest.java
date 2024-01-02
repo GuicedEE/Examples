@@ -1,5 +1,6 @@
-package com.guicedee.examples.jaxrs.binding;
+package com.guicedee.examples.jaxrs.binding.test;
 
+import com.guicedee.examples.jaxrs.binding.BootJaxRSBindings;
 import com.guicedee.guicedinjection.GuiceContext;
 import com.guicedee.guicedservlets.undertow.GuicedUndertow;
 import io.undertow.Undertow;
@@ -14,17 +15,14 @@ import java.time.temporal.ChronoUnit;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class BootJaxRSBasicTest
+class BootJaxRSBindingsTest
 {
 
 	@Test
 	public void testRS() throws Exception
 	{
-		GuiceContext.registerModule("com.guicedee.examples.jaxrs.basic");
-		Undertow undertow = GuicedUndertow.boot("0.0.0.0", 6003);
-		//It is deployed
+		BootJaxRSBindings.main(null);
 		
-		//Do stuff
 		HttpClient client = HttpClient.newBuilder()
 						.connectTimeout(Duration.of(5, ChronoUnit.SECONDS))
 						.build();
@@ -43,7 +41,6 @@ class BootJaxRSBasicTest
 		System.out.println(response.body());
 		
 		assertEquals(200, response.statusCode());
-		
-		undertow.stop();
+
 	}
 }

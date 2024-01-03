@@ -19,6 +19,10 @@
             <groupId>com.guicedee.servlets</groupId>
             <artifactId>guiced-rest-services</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.guicedee.servlets</groupId>
+            <artifactId>guiced-undertow</artifactId>
+        </dependency>
 
 
         <dependency>

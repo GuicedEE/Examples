@@ -41,6 +41,7 @@ class BootJaxRSBindingsTest
 		System.out.println(response.body());
 		
 		assertEquals(200, response.statusCode());
-
+		
+		GuiceContext.destroy();
 	}
 }

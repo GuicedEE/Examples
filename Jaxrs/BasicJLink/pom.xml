@@ -26,7 +26,7 @@
                     <noManPages>true</noManPages>
                     <stripDebug>true</stripDebug>
                     <verbose>true</verbose>
-                    <compress>2</compress>
+                    <compress>1</compress>
                     <launcher>example=com.guicedee.examples.jaxrs.basic/com.guicedee.examples.jaxrs.basic.HelloWorld</launcher>
                 </configuration>
                 <dependencies>

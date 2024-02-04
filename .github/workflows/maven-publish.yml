@@ -1,0 +1,37 @@
+name: Maven Package
+on:
+  workflow_dispatch:
+  push:
+jobs:
+  JaxRS-Basic:
+    uses: GuicedEE/Workflows/.github/workflows/projects.yml@master
+    with:
+      baseDir: 'Jaxrs/Basic/'
+      name: 'JAXRS Basic'
+    secrets:
+      USERNAME: ${{secrets.USERNAME}}
+      USER_TOKEN: ${{secrets.USER_TOKEN}}
+      SONA_USERNAME: ${{secrets.SONA_USERNAME}}
+      SONA_PASSWORD: ${{secrets.SONA_PASSWORD}}
+  JaxRS-BasicJLink:
+    uses: GuicedEE/Workflows/.github/workflows/projects.yml@master
+    needs:
+      - JaxRS-Basic
+    with:
+      baseDir: 'Jaxrs/BasicJLink/'
+      name: 'JAXRS Basic JLink'
+    secrets:
+      USERNAME: ${{secrets.USERNAME}}
+      USER_TOKEN: ${{secrets.USER_TOKEN}}
+      SONA_USERNAME: ${{secrets.SONA_USERNAME}}
+      SONA_PASSWORD: ${{secrets.SONA_PASSWORD}}
+  JaxRS-Bindings:
+    uses: GuicedEE/Workflows/.github/workflows/projects.yml@master
+    with:
+      baseDir: 'Jaxrs/Binding/'
+      name: 'JAXRS Bindings'
+    secrets:
+      USERNAME: ${{secrets.USERNAME}}
+      USER_TOKEN: ${{secrets.USER_TOKEN}}
+      SONA_USERNAME: ${{secrets.SONA_USERNAME}}
+      SONA_PASSWORD: ${{secrets.SONA_PASSWORD}}

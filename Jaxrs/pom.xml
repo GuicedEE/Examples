@@ -18,7 +18,7 @@
 
     <modules>
         <module>Basic</module>
-        <module>OAuth</module>
+        <!--<module>OAuth</module>-->
     </modules>
 
     <dependencies>

@@ -32,6 +32,6 @@ class HelloWorldTest
 		System.out.println(response.body());
 		assertEquals(200, response.statusCode());
 		
-		GuiceContext.destroy();
+		GuiceContext.instance().destroy();
 	}
 }

@@ -2,7 +2,6 @@ package com.guicedee.examples.jaxrs.basic.tests;
 
 import com.guicedee.examples.jaxrs.basic.HelloWorld;
 import com.guicedee.guicedinjection.GuiceContext;
-import com.guicedee.guicedservlets.undertow.GuicedUndertow;
 import org.junit.jupiter.api.Test;
 
 import java.net.URI;

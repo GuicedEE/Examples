@@ -21,11 +21,6 @@
         </dependency>
 
         <dependency>
-            <groupId>com.guicedee.servlets</groupId>
-            <artifactId>guiced-undertow</artifactId>
-        </dependency>
-
-        <dependency>
             <groupId>com.guicedee</groupId>
             <artifactId>guice-injection</artifactId>
         </dependency>

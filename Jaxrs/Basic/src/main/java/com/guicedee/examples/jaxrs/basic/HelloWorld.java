@@ -1,8 +1,6 @@
 package com.guicedee.examples.jaxrs.basic;
 
 import com.guicedee.client.IGuiceContext;
-import com.guicedee.guicedservlets.undertow.GuicedUndertow;
-import io.undertow.Undertow;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
@@ -28,7 +26,9 @@ public class HelloWorld
 
         //optional for class scanning optimization
         IGuiceContext.registerModule("com.guicedee.examples.jaxrs.basic");
-        Undertow boot = GuicedUndertow.boot("0.0.0.0", 6003);
+        IGuiceContext.instance()
+                .inject();
+
         LocalDateTime endTime = LocalDateTime.now();
 
         System.out.println("Started in " + ChronoUnit.MILLIS.between(startTime, endTime) + "ms");

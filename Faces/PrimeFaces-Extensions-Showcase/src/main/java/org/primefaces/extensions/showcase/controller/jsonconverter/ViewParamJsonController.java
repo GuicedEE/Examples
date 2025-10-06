@@ -27,7 +27,7 @@ import java.util.Map;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.faces.view.ViewScoped;
-import jakarta.inject.Inject;
+import com.google.inject.Inject;
 import jakarta.inject.Named;
 
 import org.apache.commons.lang3.tuple.ImmutablePair;

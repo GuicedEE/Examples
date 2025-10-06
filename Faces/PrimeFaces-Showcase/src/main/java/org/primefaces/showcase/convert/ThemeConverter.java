@@ -25,7 +25,7 @@ import jakarta.faces.context.FacesContext;
 import jakarta.faces.convert.Converter;
 import jakarta.faces.convert.ConverterException;
 import jakarta.faces.convert.FacesConverter;
-import jakarta.inject.Inject;
+import com.google.inject.Inject;
 import jakarta.inject.Named;
 
 @Named

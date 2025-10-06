@@ -21,7 +21,7 @@ import org.primefaces.showcase.domain.Document;
 import org.primefaces.showcase.service.DocumentService;
 
 import jakarta.annotation.PostConstruct;
-import jakarta.inject.Inject;
+import com.google.inject.Inject;
 import jakarta.inject.Named;
 import java.io.Serializable;
 

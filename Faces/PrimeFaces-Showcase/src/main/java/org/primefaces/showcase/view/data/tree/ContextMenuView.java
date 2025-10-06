@@ -22,7 +22,7 @@ import org.primefaces.showcase.service.DocumentService;
 import jakarta.annotation.PostConstruct;
 import jakarta.faces.application.FacesMessage;
 import jakarta.faces.context.FacesContext;
-import jakarta.inject.Inject;
+import com.google.inject.Inject;
 import jakarta.inject.Named;
 import java.io.Serializable;
 

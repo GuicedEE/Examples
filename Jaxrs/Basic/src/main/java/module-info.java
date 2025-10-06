@@ -1,6 +1,6 @@
 module com.guicedee.examples.jaxrs.basic {
 	requires com.guicedee.guicedinjection;
-	requires com.guicedee.guicedservlets.rest;
+	requires com.guicedee.rest;
 	
 	requires java.net.http;
 

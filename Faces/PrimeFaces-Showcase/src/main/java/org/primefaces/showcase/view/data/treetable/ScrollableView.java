@@ -20,7 +20,7 @@ import org.primefaces.model.TreeNode;
 import org.primefaces.showcase.service.DocumentService;
 
 import jakarta.annotation.PostConstruct;
-import jakarta.inject.Inject;
+import com.google.inject.Inject;
 import jakarta.inject.Named;
 import java.io.Serializable;
 

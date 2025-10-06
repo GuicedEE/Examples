@@ -20,7 +20,7 @@ import org.primefaces.showcase.service.DocumentService;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.enterprise.context.RequestScoped;
-import jakarta.inject.Inject;
+import com.google.inject.Inject;
 import jakarta.inject.Named;
 
 @Named("treeIconView")

@@ -22,7 +22,7 @@ import org.primefaces.showcase.service.CarService;
 import jakarta.annotation.PostConstruct;
 import jakarta.faces.component.UIComponent;
 import jakarta.faces.context.FacesContext;
-import jakarta.inject.Inject;
+import com.google.inject.Inject;
 import jakarta.inject.Named;
 import java.io.Serializable;
 import java.util.ArrayList;

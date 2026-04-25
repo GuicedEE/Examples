@@ -2,36 +2,19 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>com.guicedee.examples</groupId>
-        <artifactId>examples-parent</artifactId>
-        <version>2.0.0-RC8</version>
-    </parent>
-
 	<groupId>com.guicedee.examples.openapi</groupId>
     <artifactId>examples-openapi-parent</artifactId>
+    <version>2.0.0-RC9</version>
     <packaging>pom</packaging>
 
     <name>GuicedEE Open-API Examples</name>
     <description>Examples for Open API and Swagger UI</description>
+    <url>https://github.com/GuicedEE/Examples</url>
 
     <modules>
         <module>Server</module>
         <module>SwaggerUI</module>
         <module>BasicJLink</module>
     </modules>
-
-    <dependencies>
-
-    </dependencies>
-
-    <scm>
-        <url>https://github.com/GedMarc/JWebMP-Undertow.git</url>
-    </scm>
-
-    <ciManagement>
-        <system>TeamCity</system>
-        <url>http://jwebmp.com/teamcity</url>
-    </ciManagement>
 
 </project>

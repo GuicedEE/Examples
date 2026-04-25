@@ -1,16 +1,13 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>com.guicedee.examples</groupId>
-        <artifactId>examples-parent</artifactId>
-        <version>2.0.0-RC8</version>
-    </parent>
     <groupId>com.guicedee.examples.vertx</groupId>
     <artifactId>examples-vertx-parent</artifactId>
+    <version>2.0.0-RC9</version>
     <packaging>pom</packaging>
     <name>GuicedEE Vert.x Examples</name>
     <description>Examples for Vert.x Event Bus and Verticles</description>
+    <url>https://github.com/GuicedEE/Examples</url>
     <modules>
         <module>Basic</module>
         <module>BasicJLink</module>

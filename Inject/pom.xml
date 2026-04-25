@@ -2,18 +2,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>com.guicedee.examples</groupId>
-        <artifactId>examples-parent</artifactId>
-        <version>2.0.0-RC8</version>
-    </parent>
-
     <groupId>com.guicedee.examples.inject</groupId>
     <artifactId>examples-inject-parent</artifactId>
+    <version>2.0.0-RC9</version>
     <packaging>pom</packaging>
 
     <name>GuicedEE Inject Examples</name>
     <description>Examples for GuicedEE Dependency Injection and Lifecycle</description>
+    <url>https://github.com/GuicedEE/Examples</url>
 
     <modules>
         <module>Basic</module>

@@ -1,0 +1,16 @@
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.guicedee.examples.kafka</groupId>
+    <artifactId>examples-kafka-parent</artifactId>
+    <version>2.0.0-RC9</version>
+    <packaging>pom</packaging>
+    <name>GuicedEE Kafka Examples</name>
+    <description>Examples for Kafka Messaging</description>
+    <url>https://github.com/GuicedEE/Examples</url>
+    <modules>
+        <module>Basic</module>
+        <module>BasicJLink</module>
+    </modules>
+</project>
+

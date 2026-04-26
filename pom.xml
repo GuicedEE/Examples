@@ -11,33 +11,29 @@
     <description>Examples to quickly kickstart your GuicedEE applications</description>
     <url>https://github.com/GuicedEE/Examples</url>
 
-
-    <profiles>
-		<profile>
-			<id>enable-guicedee</id>
-			    <modules>
-				<module>Inject</module>
-				<module>CDI</module>
-				<module>Config</module>
-				<module>Health</module>
-				<module>Metrics</module>
-				<module>Telemetry</module>
-				<module>Vertx</module>
-				<module>Web</module>
-				<module>Rest</module>
-				<module>RestClient</module>
-				<module>OpenAPI</module>
-				<module>WebServices</module>
-				<module>WebSockets</module>
-				<module>Persistence</module>
-				<module>RabbitMQ</module>
-				<module>Kafka</module>
-				<module>Cerial</module>
-				<module>Hazelcast</module>
-				<module>MailClient</module>
-			</modules>
-		</profile>
-	</profiles>
+    <modules>
+        <module>Inject</module>
+        <module>CDI</module>
+        <module>Config</module>
+        <module>Health</module>
+        <module>Metrics</module>
+        <module>Telemetry</module>
+        <module>Vertx</module>
+        <module>Web</module>
+        <module>Rest</module>
+        <module>RestClient</module>
+        <module>OpenAPI</module>
+        <module>WebServices</module>
+        <module>WebSockets</module>
+        <module>Persistence</module>
+        <module>RabbitMQ</module>
+        <module>Kafka</module>
+        <module>IBMMQ</module>
+        <module>Cerial</module>
+        <module>Hazelcast</module>
+        <module>JWT</module>
+        <module>MailClient</module>
+    </modules>
 
 
 </project>

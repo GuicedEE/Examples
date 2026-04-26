@@ -5,7 +5,7 @@
     <groupId>com.guicedee.examples</groupId>
     <artifactId>examples-parent</artifactId>
     <packaging>pom</packaging>
-    <version>2.0.0-RC10</version>
+    <version>2.0.0-RC11</version>
 
     <name>GuicedEE Examples</name>
     <description>Examples to quickly kickstart your GuicedEE applications</description>

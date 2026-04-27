@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.guicedee.examples.vertx</groupId>
     <artifactId>examples-vertx-parent</artifactId>
-    <version>2.0.0-RC11</version>
+    <version>2.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>GuicedEE Vert.x Examples</name>
     <description>Examples for Vert.x Event Bus and Verticles</description>

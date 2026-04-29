@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.guicedee.examples.kafka</groupId>
     <artifactId>examples-kafka-parent</artifactId>
-    <version>2.0.1-SNAPSHOT</version>
+    <version>2.0.0</version>
     <packaging>pom</packaging>
     <name>GuicedEE Kafka Examples</name>
     <description>Examples for Kafka Messaging</description>

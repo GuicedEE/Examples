@@ -5,7 +5,7 @@
     <packaging>pom</packaging>
     <groupId>com.guicedee.examples</groupId>
     <artifactId>jwt-examples</artifactId>
-    <version>2.0.1-SNAPSHOT</version>
+    <version>2.0.0</version>
 
     <name>GuicedEE JWT Examples</name>
 

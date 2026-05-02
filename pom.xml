@@ -30,6 +30,7 @@
         <module>Kafka</module>
         <module>IBMMQ</module>
         <module>Cerial</module>
+        <module>FaultTolerance</module>
         <module>Hazelcast</module>
         <module>JWT</module>
         <module>MailClient</module>

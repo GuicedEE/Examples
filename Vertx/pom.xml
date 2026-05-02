@@ -12,6 +12,8 @@
         <module>Basic</module>
         <module>BasicJLink</module>
         <module>Auth</module>
+        <module>HttpProxy</module>
+        <module>Redis</module>
     </modules>
 </project>
 

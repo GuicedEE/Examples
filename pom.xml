@@ -23,6 +23,7 @@
         <module>Rest</module>
         <module>RestClient</module>
         <module>OpenAPI</module>
+        <module>GraphQL</module>
         <module>WebServices</module>
         <module>WebSockets</module>
         <module>Persistence</module>
@@ -33,6 +34,7 @@
         <module>FaultTolerance</module>
         <module>Hazelcast</module>
         <module>JWT</module>
+        <module>Auth</module>
         <module>MailClient</module>
     </modules>
 

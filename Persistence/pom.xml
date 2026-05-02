@@ -15,8 +15,13 @@
     <modules>
         <module>Basic</module>
         <module>BasicJLink</module>
+        <module>MySQL</module>
+        <module>MSSQL</module>
+        <module>Oracle</module>
+        <module>DB2</module>
         <module>MongoDB</module>
         <module>Cassandra</module>
+        <module>Redis</module>
     </modules>
 
 </project>

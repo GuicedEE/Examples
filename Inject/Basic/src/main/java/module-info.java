@@ -1,5 +1,5 @@
 module com.guicedee.examples.inject.basic {
-	requires com.guicedee.guicedinjection;
+	requires transitive com.guicedee.guicedinjection;
 
 	exports com.guicedee.examples.inject.basic;
 	opens com.guicedee.examples.inject.basic to com.google.guice;
@@ -10,4 +10,3 @@ module com.guicedee.examples.inject.basic {
 	provides com.guicedee.client.services.lifecycle.IGuicePostStartup
 			with com.guicedee.examples.inject.basic.services.PostStartupHook;
 }
-

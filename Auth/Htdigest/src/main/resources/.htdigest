@@ -1,0 +1,6 @@
+# htdigest file — generate entries with: htdigest -c .htdigest "example-realm" username
+# Format: username:realm:md5(username:realm:password)
+# Below: admin/password in realm "example-realm"
+admin:example-realm:6f4a3854e07692ca076e603e2a022403
+alice:example-realm:b89092e8a28b820f7164c1d6bd3f4325
+

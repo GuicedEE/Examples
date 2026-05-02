@@ -1,11 +1,8 @@
 module com.guicedee.examples.jwt.basic {
-	requires com.guicedee.guicedinjection;
-	requires com.guicedee.microprofile.jwt;
-	requires io.vertx.auth.jwt;
-	requires io.vertx.core;
-	requires io.vertx.auth.common;
+	requires transitive com.guicedee.guicedinjection;
+	requires transitive com.guicedee.microprofile.jwt;
+	requires transitive io.vertx.auth.jwt;
 
 	exports com.guicedee.examples.jwt.basic;
 	opens com.guicedee.examples.jwt.basic to com.google.guice;
 }
-

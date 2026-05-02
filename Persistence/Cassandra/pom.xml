@@ -23,8 +23,8 @@
             <artifactId>persistence</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.vertx</groupId>
-            <artifactId>vertx-cassandra-client</artifactId>
+            <groupId>com.guicedee.modules.services</groupId>
+            <artifactId>vertx-cassandra</artifactId>
         </dependency>
     </dependencies>
 

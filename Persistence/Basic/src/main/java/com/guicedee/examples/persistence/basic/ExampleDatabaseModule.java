@@ -2,7 +2,7 @@ package com.guicedee.examples.persistence.basic;
 
 import com.guicedee.persistence.db.DatabaseModule;
 import com.guicedee.persistence.db.ConnectionBaseInfo;
-import com.guicedee.persistence.db.ConnectionBaseInfoFactory;
+import com.guicedee.persistence.implementations.postgres.PostgresConnectionBaseInfo;
 import org.hibernate.jpa.boot.spi.PersistenceUnitDescriptor;
 
 import java.util.Properties;
@@ -22,13 +22,12 @@ public class ExampleDatabaseModule extends DatabaseModule<ExampleDatabaseModule>
     @Override
     protected ConnectionBaseInfo getConnectionBaseInfo(PersistenceUnitDescriptor unit, Properties properties)
     {
-        return new com.guicedee.persistence.implementations.postgres.PostgresConnectionBaseInfo()
+        return new PostgresConnectionBaseInfo()
+                .setServerName("localhost")
+                .setPort("5432")
+                .setDatabaseName("exampledb")
                 .setUsername("exampleuser")
                 .setPassword("examplepassword")
-                .setDatabaseName("exampledb")
-                .setHost("localhost")
-                .setPort(5432)
                 ;
     }
 }
-

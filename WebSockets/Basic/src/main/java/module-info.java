@@ -1,6 +1,6 @@
 module com.guicedee.examples.websockets.basic {
-	requires com.guicedee.guicedinjection;
-	requires com.guicedee.vertx.sockets;
+
+	requires transitive com.guicedee.vertx.sockets;
 
 	exports com.guicedee.examples.websockets.basic;
 	opens com.guicedee.examples.websockets.basic to com.google.guice;

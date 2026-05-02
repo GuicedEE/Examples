@@ -13,7 +13,6 @@
         <module>BasicJLink</module>
         <module>Auth</module>
         <module>HttpProxy</module>
-        <module>Redis</module>
         <module>Grpc</module>
     </modules>
 </project>

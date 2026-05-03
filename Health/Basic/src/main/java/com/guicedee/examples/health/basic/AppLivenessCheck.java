@@ -17,7 +17,7 @@ public class AppLivenessCheck implements HealthCheck
     {
         return HealthCheckResponse.named("app-liveness")
                 .up()
-                .withData("version", "2.0.1-SNAPSHOT")
+                .withData("version", "2.0.1")
                 .build();
     }
 }

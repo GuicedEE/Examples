@@ -13,6 +13,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>25</maven.compiler.release>
+        <guicedee.version>2.1.0-SNAPSHOT</guicedee.version>
     </properties>
 
     <dependencies>
@@ -43,7 +44,7 @@
             <dependency>
                 <groupId>com.guicedee</groupId>
                 <artifactId>guicedee-bom</artifactId>
-                <version>${project.version}</version>
+                <version>${guicedee.version}</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
@@ -53,16 +54,25 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.8.1</version>
+                <executions>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <phase>prepare-package</phase>
+                        <goals><goal>copy-dependencies</goal></goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/libs</outputDirectory>
+                            <includeScope>runtime</includeScope>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
                 <groupId>org.moditect</groupId>
                 <artifactId>moditect-maven-plugin</artifactId>
                 <executions>
-                    <execution>
-                        <id>add-module-infos</id>
-                        <phase>none</phase>
-                        <configuration combine.self="override">
-                            <skip>true</skip>
-                        </configuration>
-                    </execution>
                     <execution>
                         <id>create-runtime-image</id>
                         <phase>package</phase>
@@ -80,7 +90,8 @@
                             <jarInclusionPolicy>NONE</jarInclusionPolicy>
                             <launcher>
                                 <name>rest-basic-example</name>
-                                <module>com.guicedee.examples.jaxrs.basic/com.guicedee.examples.jaxrs.basic.HelloWorld</module>
+                                <module>com.guicedee.examples.jaxrs.basic/com.guicedee.examples.jaxrs.basic.HelloWorld
+                                </module>
                             </launcher>
                             <noHeaderFiles>true</noHeaderFiles>
                             <noManPages>true</noManPages>

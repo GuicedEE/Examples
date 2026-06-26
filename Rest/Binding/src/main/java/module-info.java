@@ -10,7 +10,7 @@ module com.guicedee.examples.jaxrs.binding {
 
 	provides IGuiceModule with RestTestBinding;
 
-	opens com.guicedee.examples.jaxrs.binding to com.google.guice, com.fasterxml.jackson.databind, com.guicedee.rest;
-	opens com.guicedee.examples.jaxrs.binding.implementations to com.fasterxml.jackson.databind, com.google.guice, com.guicedee.rest;
-	opens com.guicedee.examples.jaxrs.binding.resources to com.fasterxml.jackson.databind, com.google.guice, com.guicedee.rest;
+	opens com.guicedee.examples.jaxrs.binding to com.google.guice, tools.jackson.databind, com.guicedee.rest;
+	opens com.guicedee.examples.jaxrs.binding.implementations to tools.jackson.databind, com.google.guice, com.guicedee.rest;
+	opens com.guicedee.examples.jaxrs.binding.resources to tools.jackson.databind, com.google.guice, com.guicedee.rest;
 }

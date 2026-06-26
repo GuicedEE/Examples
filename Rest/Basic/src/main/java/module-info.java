@@ -4,5 +4,5 @@ module com.guicedee.examples.jaxrs.basic {
 	requires java.net.http;
 
 	exports com.guicedee.examples.jaxrs.basic;
-	opens com.guicedee.examples.jaxrs.basic to com.google.guice, com.fasterxml.jackson.databind, com.guicedee.rest;
+	opens com.guicedee.examples.jaxrs.basic to com.google.guice, tools.jackson.databind, com.guicedee.rest;
 }

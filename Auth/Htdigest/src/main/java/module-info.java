@@ -3,5 +3,5 @@ module com.guicedee.examples.auth.htdigest {
 	requires transitive io.vertx.auth.htdigest;
 
 	exports com.guicedee.examples.auth.htdigest;
-	opens com.guicedee.examples.auth.htdigest to com.google.guice, com.fasterxml.jackson.databind;
+	opens com.guicedee.examples.auth.htdigest to com.google.guice, tools.jackson.databind;
 }

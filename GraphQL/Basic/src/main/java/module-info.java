@@ -6,7 +6,7 @@ module com.guicedee.examples.graphql.basic {
     requires com.guicedee.guicedinjection;
 
     exports com.guicedee.examples.graphql.basic;
-    opens com.guicedee.examples.graphql.basic to com.google.guice, com.fasterxml.jackson.databind;
+    opens com.guicedee.examples.graphql.basic to com.google.guice, tools.jackson.databind;
 
     provides IGraphQLSchemaProvider with BookSchemaProvider;
 }

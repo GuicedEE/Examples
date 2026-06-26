@@ -7,5 +7,5 @@ module com.guicedee.examples.jaxrs.basic.test {
 	requires com.guicedee.rest;
 	requires com.guicedee.guicedinjection;
 	
-	opens com.guicedee.examples.jaxrs.basic.tests to com.google.guice, com.fasterxml.jackson.databind, org.apache.cxf,org.junit.platform.commons;
+	opens com.guicedee.examples.jaxrs.basic.tests to com.google.guice, tools.jackson.databind, org.apache.cxf,org.junit.platform.commons;
 }

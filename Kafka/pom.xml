@@ -4,12 +4,12 @@
     <parent>
         <groupId>com.guicedee.examples</groupId>
         <artifactId>examples-parent</artifactId>
-        <version>2.3.0</version>
+        <version>2.4.0</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <groupId>com.guicedee.examples.kafka</groupId>
     <artifactId>examples-kafka-parent</artifactId>
-    <version>2.3.0</version>
+    <version>2.4.0</version>
     <packaging>pom</packaging>
     <name>GuicedEE Kafka Examples</name>
     <description>Examples for Kafka Messaging</description>

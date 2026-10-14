@@ -13,7 +13,7 @@ Demonstrates the GuicedEE HTTP Proxy integration using `ProxyModule` and `ProxyC
 ```bash
 # Start an origin server on port 7070 first, then:
 mvn package
-java --module-path target/libs:target/vertx-http-proxy-example-2.3.0.jar \
+java --module-path target/libs:target/vertx-http-proxy-example-2.4.0.jar \
      -m com.guicedee.examples.vertx.httpproxy/com.guicedee.examples.vertx.httpproxy.HttpProxyExample
 ```
 

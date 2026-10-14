@@ -1,4 +1,5 @@
 module com.guicedee.examples.hazelcast.server {
+    requires com.guicedee.guicedinjection;
 	requires transitive com.guicedee.guicedhazelcast;
 
 	exports com.guicedee.examples.hazelcast.server;

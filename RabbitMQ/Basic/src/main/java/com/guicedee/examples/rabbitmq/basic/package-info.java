@@ -1,4 +1,4 @@
-@com.guicedee.vertx.Verticle
+@com.guicedee.vertx.spi.Verticle("rabbitmq-example")
 @com.guicedee.rabbit.RabbitConnectionOptions(
         value = "example-connection",
         host = "localhost",

@@ -1,8 +1,8 @@
 package com.guicedee.examples.vertx.basic;
 
 import com.guicedee.vertx.VertxEventPublisher;
-import jakarta.inject.Inject;
-import jakarta.inject.Named;
+import com.google.inject.Inject;
+import com.google.inject.name.Named;
 
 /**
  * Demonstrates injecting VertxEventPublisher to send messages on the event bus.
@@ -35,12 +35,12 @@ public class OrderService
     public void createOrder(String id, String item, double amount)
     {
         OrderRequest order = new OrderRequest(id, item, amount);
-        orderCreatedPublisher.request(order)
+        orderCreatedPublisher.<String>request(order)
                 .onComplete(ar ->
                 {
                     if (ar.succeeded())
                     {
-                        System.out.println("[OrderService] Reply: " + ar.result().body());
+                        System.out.println("[OrderService] Reply: " + ar.result());
                     }
                     else
                     {

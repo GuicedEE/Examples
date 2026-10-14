@@ -1,7 +1,8 @@
 package com.guicedee.examples.config.basic;
 
 import com.guicedee.client.IGuiceContext;
-import jakarta.inject.Inject;
+import com.guicedee.guicedinjection.GuiceApplication;
+import com.google.inject.Inject;
 import org.eclipse.microprofile.config.inject.ConfigProperty;
 
 import java.time.LocalDateTime;
@@ -32,9 +33,10 @@ public class ConfigExample
     {
         LocalDateTime startTime = LocalDateTime.now();
 
-        IGuiceContext.registerModule("com.guicedee.examples.config.basic");
-        IGuiceContext.instance()
-                .inject();
+        GuiceApplication.run(() -> {
+            IGuiceContext.registerModule("com.guicedee.examples.config.basic");
+            IGuiceContext.getContext().getConfig().setServiceLoadWithClassPath(true);
+        });
 
         LocalDateTime endTime = LocalDateTime.now();
         System.out.println("Started in " + ChronoUnit.MILLIS.between(startTime, endTime) + "ms");

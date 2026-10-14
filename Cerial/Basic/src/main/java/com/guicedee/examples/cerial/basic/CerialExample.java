@@ -7,8 +7,9 @@ import com.guicedee.cerial.enumerations.FlowControl;
 import com.guicedee.cerial.enumerations.Parity;
 import com.guicedee.cerial.enumerations.StopBits;
 import com.guicedee.client.IGuiceContext;
-import jakarta.inject.Inject;
-import jakarta.inject.Named;
+import com.guicedee.guicedinjection.GuiceApplication;
+import com.google.inject.Inject;
+import com.google.inject.name.Named;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
@@ -24,7 +25,7 @@ public class CerialExample
 {
     @Inject
     @Named("1")
-    private CerialPortConnection connection;
+    private CerialPortConnection<?> connection;
 
     public void connectAndSend()
     {
@@ -49,9 +50,10 @@ public class CerialExample
     {
         LocalDateTime startTime = LocalDateTime.now();
 
-        IGuiceContext.registerModule("com.guicedee.examples.cerial.basic");
-        IGuiceContext.instance()
-                .inject();
+        GuiceApplication.run(() -> {
+            IGuiceContext.registerModule("com.guicedee.examples.cerial.basic");
+            IGuiceContext.getContext().getConfig().setServiceLoadWithClassPath(true);
+        });
 
         LocalDateTime endTime = LocalDateTime.now();
         System.out.println("Cerial example started in " + ChronoUnit.MILLIS.between(startTime, endTime) + "ms");

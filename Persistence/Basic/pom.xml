@@ -1,6 +1,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.guicedee.examples</groupId>
+        <artifactId>examples-parent</artifactId>
+        <version>2.3.0</version>
+        <relativePath>../../pom.xml</relativePath>
+    </parent>
     <packaging>jar</packaging>
     <groupId>com.guicedee.examples</groupId>
     <artifactId>persistence-basic-example</artifactId>
@@ -30,10 +36,6 @@
         <dependency>
             <groupId>io.vertx</groupId>
             <artifactId>vertx-pg-client</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.guicedee.modules.services</groupId>
-            <artifactId>scram</artifactId>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -76,7 +78,7 @@
                         <goals><goal>create-runtime-image</goal></goals>
                         <configuration>
                             <modulePath>
-                                <path>${project.build.directory}/libs</path>
+                                <path>${examples.runtimeDependencyDirectory}</path>
                                 <path>${project.build.directory}/${project.build.finalName}.jar</path>
                             </modulePath>
                             <modules><module>com.guicedee.examples.persistence.basic</module></modules>
@@ -88,7 +90,7 @@
                             <noHeaderFiles>true</noHeaderFiles>
                             <noManPages>true</noManPages>
                             <stripDebug>true</stripDebug>
-                            <outputDirectory>${project.build.directory}/jlink-image</outputDirectory>
+                            <outputDirectory>${examples.runtimeImageDirectory}</outputDirectory>
                         </configuration>
                     </execution>
                 </executions>

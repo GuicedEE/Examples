@@ -1,4 +1,4 @@
-@com.guicedee.vertx.Verticle
+@com.guicedee.vertx.spi.Verticle("ibmmq-example")
 @com.guicedee.ibmmq.IBMMQConnectionOptions(
         value = "example-connection",
         host = "localhost",

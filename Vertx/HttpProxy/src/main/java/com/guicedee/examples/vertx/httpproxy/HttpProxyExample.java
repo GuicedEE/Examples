@@ -1,6 +1,7 @@
 package com.guicedee.examples.vertx.httpproxy;
 
 import com.guicedee.client.IGuiceContext;
+import com.guicedee.guicedinjection.GuiceApplication;
 
 /**
  * Boots the GuicedEE context with the HTTP Proxy module.
@@ -10,9 +11,10 @@ import com.guicedee.client.IGuiceContext;
  */
 public class HttpProxyExample {
     public static void main(String[] args) {
-        IGuiceContext.registerModuleForScanning
-                .add("com.guicedee.examples.vertx.httpproxy");
-        IGuiceContext.instance().inject();
+        GuiceApplication.run(() -> {
+            IGuiceContext.registerModule("com.guicedee.examples.vertx.httpproxy");
+            IGuiceContext.getContext().getConfig().setServiceLoadWithClassPath(true);
+        });
         System.out.println("🔀 HTTP Proxy is running — forwarding traffic to origin server");
     }
 }

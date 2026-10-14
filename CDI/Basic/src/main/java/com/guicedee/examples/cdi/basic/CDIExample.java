@@ -1,6 +1,7 @@
 package com.guicedee.examples.cdi.basic;
 
 import com.guicedee.client.IGuiceContext;
+import com.guicedee.guicedinjection.GuiceApplication;
 import jakarta.inject.Inject;
 
 import java.time.LocalDateTime;
@@ -19,9 +20,10 @@ public class CDIExample
     {
         LocalDateTime startTime = LocalDateTime.now();
 
-        IGuiceContext.registerModule("com.guicedee.examples.cdi.basic");
-        IGuiceContext.instance()
-                .inject();
+        GuiceApplication.run(() -> {
+            IGuiceContext.registerModule("com.guicedee.examples.cdi.basic");
+            IGuiceContext.getContext().getConfig().setServiceLoadWithClassPath(true);
+        });
 
         LocalDateTime endTime = LocalDateTime.now();
         System.out.println("Started in " + ChronoUnit.MILLIS.between(startTime, endTime) + "ms");

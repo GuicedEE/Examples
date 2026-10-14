@@ -1,6 +1,7 @@
 package com.guicedee.examples.auth.htdigest;
 
 import com.guicedee.client.IGuiceContext;
+import com.guicedee.guicedinjection.GuiceApplication;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
@@ -24,9 +25,10 @@ public class HtdigestAuthExample
 
         LocalDateTime startTime = LocalDateTime.now();
 
-        IGuiceContext.registerModule("com.guicedee.examples.auth.htdigest");
-        IGuiceContext.instance()
-                .inject();
+        GuiceApplication.run(() -> {
+            IGuiceContext.registerModule("com.guicedee.examples.auth.htdigest");
+            IGuiceContext.getContext().getConfig().setServiceLoadWithClassPath(true);
+        });
 
         LocalDateTime endTime = LocalDateTime.now();
         System.out.println("htdigest Auth example started in " + ChronoUnit.MILLIS.between(startTime, endTime) + "ms");

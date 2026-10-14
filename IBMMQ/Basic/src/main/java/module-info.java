@@ -1,4 +1,5 @@
 module com.guicedee.examples.ibmmq.basic {
+    requires com.guicedee.guicedinjection;
 	requires transitive com.guicedee.ibmmq;
 
 	exports com.guicedee.examples.ibmmq.basic;

@@ -1,6 +1,7 @@
 package com.guicedee.examples.jaxws.secured;
 
 import com.guicedee.client.IGuiceContext;
+import com.guicedee.guicedinjection.GuiceApplication;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
@@ -16,9 +17,10 @@ public class SecuredWebServicesExample
 
         LocalDateTime startTime = LocalDateTime.now();
 
-        IGuiceContext.registerModule("com.guicedee.examples.jaxws.secured");
-        IGuiceContext.instance()
-                .inject();
+        GuiceApplication.run(() -> {
+            IGuiceContext.registerModule("com.guicedee.examples.jaxws.secured");
+            IGuiceContext.getContext().getConfig().setServiceLoadWithClassPath(true);
+        });
 
         LocalDateTime endTime = LocalDateTime.now();
         System.out.println("Secured WebServices example started in " + ChronoUnit.MILLIS.between(startTime, endTime) + "ms");

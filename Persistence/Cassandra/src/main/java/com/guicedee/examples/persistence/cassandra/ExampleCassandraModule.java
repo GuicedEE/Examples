@@ -1,5 +1,7 @@
 package com.guicedee.examples.persistence.cassandra;
 
+import com.guicedee.client.Environment;
+
 import com.guicedee.persistence.implementations.cassandra.CassandraConnectionInfo;
 import com.guicedee.persistence.implementations.cassandra.CassandraModule;
 
@@ -17,12 +19,9 @@ public class ExampleCassandraModule extends CassandraModule<ExampleCassandraModu
 
     @Override
     protected CassandraConnectionInfo getCassandraConnectionInfo() {
-        String host = System.getProperty("CASSANDRA_HOST",
-                System.getenv().getOrDefault("CASSANDRA_HOST", "localhost"));
-        int port = Integer.parseInt(System.getProperty("CASSANDRA_PORT",
-                System.getenv().getOrDefault("CASSANDRA_PORT", "9042")));
-        String keyspace = System.getProperty("CASSANDRA_KEYSPACE",
-                System.getenv().getOrDefault("CASSANDRA_KEYSPACE", ""));
+        String host = Environment.getSystemPropertyOrEnvironment("CASSANDRA_HOST", "localhost");
+        int port = Integer.parseInt(Environment.getSystemPropertyOrEnvironment("CASSANDRA_PORT", "9042"));
+        String keyspace = Environment.getSystemPropertyOrEnvironment("CASSANDRA_KEYSPACE", "");
 
         CassandraConnectionInfo info = new CassandraConnectionInfo()
                 .setName("example")

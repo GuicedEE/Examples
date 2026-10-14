@@ -1,4 +1,5 @@
 module com.guicedee.examples.auth.abac {
+    requires com.guicedee.guicedinjection;
 	requires transitive com.guicedee.rest;
 	requires transitive io.vertx.auth.abac;
 	requires transitive io.vertx.auth.jwt;

@@ -1,4 +1,5 @@
 module com.guicedee.examples.persistence.cassandra {
+    requires com.guicedee.guicedinjection;
 	requires transitive com.guicedee.persistence;
 	requires transitive io.vertx.cassandra.client;
 

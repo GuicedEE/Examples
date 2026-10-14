@@ -1,4 +1,5 @@
 module com.guicedee.examples.openapi.server {
+    requires com.guicedee.guicedinjection;
 	requires transitive com.guicedee.rest;
 	requires transitive com.guicedee.openapi;
 

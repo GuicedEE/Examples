@@ -8,11 +8,11 @@ import com.guicedee.vertx.grpc.GrpcOptions;
  * This is the simplest way to configure gRPC — just annotate a class
  * and the server is auto-discovered at startup.
  * <p>
- * All values support {@code ${ENV_VAR:default}} placeholder syntax.
+ * All values support {@code ${ENV_VAR:-default}} placeholder syntax.
  */
 @GrpcOptions(
         name = "annotated-grpc",
-        host = "${GRPC_HOST:0.0.0.0}",
+        host = "${GRPC_HOST:-0.0.0.0}",
         port = 50051,
         grpcWebEnabled = true,
         transcodingEnabled = true,

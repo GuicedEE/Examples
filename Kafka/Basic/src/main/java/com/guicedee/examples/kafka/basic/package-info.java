@@ -1,4 +1,4 @@
-@com.guicedee.vertx.Verticle
+@com.guicedee.vertx.spi.Verticle("kafka-example")
 @com.guicedee.kafka.KafkaConnectionOptions(
         value = "example-connection",
         bootstrapServers = "localhost:9092",

@@ -1,9 +1,10 @@
 package com.guicedee.examples.restclient.basic;
 
 import com.guicedee.client.IGuiceContext;
-import com.guicedee.restclient.Endpoint;
-import com.guicedee.restclient.RestClient;
-import jakarta.inject.Named;
+import com.guicedee.guicedinjection.GuiceApplication;
+import com.guicedee.rest.client.annotations.Endpoint;
+import com.guicedee.rest.client.RestClient;
+import com.google.inject.name.Named;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
@@ -24,9 +25,10 @@ public class RestClientExample
 
         LocalDateTime startTime = LocalDateTime.now();
 
-        IGuiceContext.registerModule("com.guicedee.examples.restclient.basic");
-        IGuiceContext.instance()
-                .inject();
+        GuiceApplication.run(() -> {
+            IGuiceContext.registerModule("com.guicedee.examples.restclient.basic");
+            IGuiceContext.getContext().getConfig().setServiceLoadWithClassPath(true);
+        });
 
         LocalDateTime endTime = LocalDateTime.now();
         System.out.println("REST Client example started in " + ChronoUnit.MILLIS.between(startTime, endTime) + "ms");

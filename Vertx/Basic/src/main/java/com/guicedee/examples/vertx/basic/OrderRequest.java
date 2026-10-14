@@ -2,7 +2,7 @@ package com.guicedee.examples.vertx.basic;
 
 /**
  * Simple DTO for order events sent over the Vert.x event bus.
- * Must be in a package opened to com.fasterxml.jackson.databind for serialization.
+ * Must be in a package opened to tools.jackson.databind for serialization.
  */
 public class OrderRequest
 {

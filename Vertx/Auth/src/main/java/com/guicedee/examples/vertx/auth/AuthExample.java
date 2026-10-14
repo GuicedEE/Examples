@@ -1,6 +1,7 @@
 package com.guicedee.examples.vertx.auth;
 
 import com.guicedee.client.IGuiceContext;
+import com.guicedee.guicedinjection.GuiceApplication;
 
 /**
  * Entry point for the Vert.x Auth example.
@@ -19,7 +20,10 @@ public class AuthExample
 {
     public static void main(String[] args)
     {
-        IGuiceContext.instance().inject();
+        GuiceApplication.run(() -> {
+            IGuiceContext.registerModule("com.guicedee.examples.vertx.auth");
+            IGuiceContext.getContext().getConfig().setServiceLoadWithClassPath(true);
+        });
         System.out.println("Auth example running on http://localhost:8080");
         System.out.println("  POST /api/auth/login   — get JWT token");
         System.out.println("  GET  /api/auth/me       — protected (any authenticated user)");

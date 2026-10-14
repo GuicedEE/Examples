@@ -1,6 +1,7 @@
 package com.guicedee.examples.openapi.swaggerui;
 
 import com.guicedee.client.IGuiceContext;
+import com.guicedee.guicedinjection.GuiceApplication;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
@@ -20,9 +21,10 @@ public class SwaggerUIExample
 
         LocalDateTime startTime = LocalDateTime.now();
 
-        IGuiceContext.registerModule("com.guicedee.examples.openapi.swaggerui");
-        IGuiceContext.instance()
-                .inject();
+        GuiceApplication.run(() -> {
+            IGuiceContext.registerModule("com.guicedee.examples.openapi.swaggerui");
+            IGuiceContext.getContext().getConfig().setServiceLoadWithClassPath(true);
+        });
 
         LocalDateTime endTime = LocalDateTime.now();
         System.out.println("Swagger UI example started in " + ChronoUnit.MILLIS.between(startTime, endTime) + "ms");

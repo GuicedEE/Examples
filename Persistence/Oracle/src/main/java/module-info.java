@@ -1,4 +1,5 @@
 module com.guicedee.examples.persistence.oracle {
+    requires com.guicedee.guicedinjection;
 	requires transitive com.guicedee.persistence;
 
 	exports com.guicedee.examples.persistence.oracle;

@@ -1,5 +1,7 @@
 package com.guicedee.examples.vertx.grpc;
 
+import com.guicedee.client.Environment;
+
 import com.guicedee.vertx.grpc.GrpcConnectionInfo;
 import com.guicedee.vertx.grpc.GrpcModule;
 
@@ -24,10 +26,8 @@ public class ExampleGrpcModule extends GrpcModule<ExampleGrpcModule> {
 
     @Override
     protected GrpcConnectionInfo getGrpcConnectionInfo() {
-        String host = System.getProperty("GRPC_HOST",
-                System.getenv().getOrDefault("GRPC_HOST", "0.0.0.0"));
-        int port = Integer.parseInt(System.getProperty("GRPC_PORT",
-                System.getenv().getOrDefault("GRPC_PORT", "50051")));
+        String host = Environment.getSystemPropertyOrEnvironment("GRPC_HOST", "0.0.0.0");
+        int port = Integer.parseInt(Environment.getSystemPropertyOrEnvironment("GRPC_PORT", "50051"));
 
         return new GrpcConnectionInfo()
                 .setName("example-grpc")

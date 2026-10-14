@@ -2,6 +2,7 @@ import com.guicedee.examples.jaxrs.binding.implementations.RestTestBinding;
 import com.guicedee.client.services.lifecycle.IGuiceModule;
 
 module com.guicedee.examples.jaxrs.binding {
+    requires com.guicedee.guicedinjection;
 	exports com.guicedee.examples.jaxrs.binding to com.guicedee.examples.jaxrs.binding.test;
 
 	requires transitive com.guicedee.rest;

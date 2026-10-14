@@ -1,4 +1,5 @@
 module com.guicedee.examples.cdi.basic {
+    requires com.guicedee.cdi;
 	requires transitive com.guicedee.guicedinjection;
 
 	exports com.guicedee.examples.cdi.basic;

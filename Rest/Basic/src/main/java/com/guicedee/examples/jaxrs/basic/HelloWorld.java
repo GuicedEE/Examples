@@ -1,6 +1,7 @@
 package com.guicedee.examples.jaxrs.basic;
 
 import com.guicedee.client.IGuiceContext;
+import com.guicedee.guicedinjection.GuiceApplication;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
@@ -27,9 +28,10 @@ public class HelloWorld
         LocalDateTime startTime = LocalDateTime.now();
 
         //optional for class scanning optimization
-        IGuiceContext.registerModule("com.guicedee.examples.jaxrs.basic");
-        IGuiceContext.instance()
-                .inject();
+        GuiceApplication.run(() -> {
+            IGuiceContext.registerModule("com.guicedee.examples.jaxrs.basic");
+            IGuiceContext.getContext().getConfig().setServiceLoadWithClassPath(true);
+        });
 
         LocalDateTime endTime = LocalDateTime.now();
 

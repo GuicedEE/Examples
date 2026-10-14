@@ -1,5 +1,7 @@
 package com.guicedee.examples.vertx.grpc;
 
+import com.guicedee.client.Environment;
+
 import com.guicedee.vertx.grpc.GrpcConnectionInfo;
 import com.guicedee.vertx.grpc.GrpcModule;
 
@@ -22,8 +24,8 @@ public class TlsGrpcExample extends GrpcModule<TlsGrpcExample> {
                 .setHost("0.0.0.0")
                 .setPort(50443)
                 .setTlsEnabled(true)
-                .setTlsCertPath(System.getenv().getOrDefault("GRPC_TLS_CERT_PATH", "/path/to/server.crt"))
-                .setTlsKeyPath(System.getenv().getOrDefault("GRPC_TLS_KEY_PATH", "/path/to/server.key"))
+                .setTlsCertPath(Environment.getSystemPropertyOrEnvironment("GRPC_TLS_CERT_PATH", "/path/to/server.crt"))
+                .setTlsKeyPath(Environment.getSystemPropertyOrEnvironment("GRPC_TLS_KEY_PATH", "/path/to/server.key"))
                 .setDefaultConnection(false);
     }
 }

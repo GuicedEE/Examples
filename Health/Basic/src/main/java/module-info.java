@@ -1,4 +1,5 @@
 module com.guicedee.examples.health.basic {
+    requires com.guicedee.guicedinjection;
 	requires transitive com.guicedee.health;
 
 	exports com.guicedee.examples.health.basic;

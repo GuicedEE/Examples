@@ -7,7 +7,7 @@
 @JwtAuthOptions(
     keystorePath = "keystore.jceks",
     keystoreType = "jceks",
-    keystorePassword = "${JWT_KEYSTORE_PASSWORD:secret}",
+    keystorePassword = "${JWT_KEYSTORE_PASSWORD:-secret}",
     algorithm = "HS256",
     issuer = "guicedee-example",
     audience = {"my-api"},

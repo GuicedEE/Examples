@@ -1,7 +1,7 @@
 package com.guicedee.examples.persistence.db2;
 
-import com.guicedee.persistence.db.DatabaseModule;
-import com.guicedee.persistence.db.ConnectionBaseInfo;
+import com.guicedee.persistence.DatabaseModule;
+import com.guicedee.persistence.ConnectionBaseInfo;
 import com.guicedee.persistence.implementations.db2.DB2ConnectionBaseInfo;
 import org.hibernate.jpa.boot.spi.PersistenceUnitDescriptor;
 

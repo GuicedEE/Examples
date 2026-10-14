@@ -1,7 +1,7 @@
 package com.guicedee.examples.persistence.oracle;
 
-import com.guicedee.persistence.db.DatabaseModule;
-import com.guicedee.persistence.db.ConnectionBaseInfo;
+import com.guicedee.persistence.DatabaseModule;
+import com.guicedee.persistence.ConnectionBaseInfo;
 import com.guicedee.persistence.implementations.oracle.OracleConnectionBaseInfo;
 import org.hibernate.jpa.boot.spi.PersistenceUnitDescriptor;
 

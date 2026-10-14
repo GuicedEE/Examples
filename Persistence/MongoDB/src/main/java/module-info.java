@@ -1,4 +1,5 @@
 module com.guicedee.examples.persistence.mongodb {
+    requires com.guicedee.guicedinjection;
 	requires transitive com.guicedee.persistence;
 	requires transitive io.vertx.mongo.client;
 

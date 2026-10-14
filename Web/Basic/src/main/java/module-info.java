@@ -1,4 +1,5 @@
 module com.guicedee.examples.web.basic {
+    requires com.guicedee.guicedinjection;
 	requires transitive com.guicedee.vertx.web;
 
 	exports com.guicedee.examples.web.basic;

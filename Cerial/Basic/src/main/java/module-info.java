@@ -1,4 +1,5 @@
 module com.guicedee.examples.cerial.basic {
+    requires com.guicedee.guicedinjection;
 	requires transitive com.guicedee.cerial;
 
 	exports com.guicedee.examples.cerial.basic;

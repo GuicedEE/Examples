@@ -1,8 +1,9 @@
 package com.guicedee.examples.persistence.cassandra;
 
 import com.guicedee.client.IGuiceContext;
+import com.guicedee.guicedinjection.GuiceApplication;
 import io.vertx.cassandra.CassandraClient;
-import jakarta.inject.Inject;
+import com.google.inject.Inject;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
@@ -80,8 +81,10 @@ public class CassandraExample {
 
         LocalDateTime startTime = LocalDateTime.now();
 
-        IGuiceContext.registerModule("com.guicedee.examples.persistence.cassandra");
-        IGuiceContext.instance().inject();
+        GuiceApplication.run(() -> {
+            IGuiceContext.registerModule("com.guicedee.examples.persistence.cassandra");
+            IGuiceContext.getContext().getConfig().setServiceLoadWithClassPath(true);
+        });
 
         LocalDateTime endTime = LocalDateTime.now();
         System.out.println("Cassandra example started in " + ChronoUnit.MILLIS.between(startTime, endTime) + "ms");

@@ -1,5 +1,7 @@
 package com.guicedee.examples.vertx.redis;
 
+import com.guicedee.client.Environment;
+
 import com.guicedee.vertx.redis.RedisConnectionInfo;
 import com.guicedee.vertx.redis.RedisModule;
 
@@ -24,17 +26,13 @@ public class SentinelRedisExample extends RedisModule<SentinelRedisExample> {
         return new RedisConnectionInfo()
                 .setName("sentinel-redis")
                 .setRedisMode(RedisConnectionInfo.RedisMode.SENTINEL)
-                .setConnectionString(env("REDIS_SENTINEL_1", "redis://sentinel1:5000"))
-                .addEndpoint(env("REDIS_SENTINEL_2", "redis://sentinel2:5000"))
-                .addEndpoint(env("REDIS_SENTINEL_3", "redis://sentinel3:5000"))
-                .setMasterName(env("REDIS_MASTER_NAME", "mymaster"))
+                .setConnectionString(Environment.getSystemPropertyOrEnvironment("REDIS_SENTINEL_1", "redis://sentinel1:5000"))
+                .addEndpoint(Environment.getSystemPropertyOrEnvironment("REDIS_SENTINEL_2", "redis://sentinel2:5000"))
+                .addEndpoint(Environment.getSystemPropertyOrEnvironment("REDIS_SENTINEL_3", "redis://sentinel3:5000"))
+                .setMasterName(Environment.getSystemPropertyOrEnvironment("REDIS_MASTER_NAME", "mymaster"))
                 .setMaxPoolSize(6)
                 .setDefaultConnection(false);
     }
 
-    private static String env(String key, String fallback) {
-        String val = System.getenv(key);
-        return (val != null && !val.isBlank()) ? val : fallback;
-    }
 }
 

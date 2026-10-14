@@ -1,4 +1,5 @@
 module com.guicedee.examples.mailclient {
+    requires com.guicedee.guicedinjection;
 
 	requires transitive com.guicedee.mailclient;
 

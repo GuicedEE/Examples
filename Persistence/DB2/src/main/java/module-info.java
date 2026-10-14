@@ -1,4 +1,5 @@
 module com.guicedee.examples.persistence.db2 {
+    requires com.guicedee.guicedinjection;
 	requires transitive com.guicedee.persistence;
 
 	exports com.guicedee.examples.persistence.db2;

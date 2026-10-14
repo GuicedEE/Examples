@@ -8,11 +8,11 @@ import com.guicedee.vertx.redis.RedisOptions;
  * This is the simplest way to configure Redis — just annotate a class
  * and the connection is auto-discovered at startup.
  * <p>
- * All values support {@code ${ENV_VAR:default}} placeholder syntax.
+ * All values support {@code ${ENV_VAR:-default}} placeholder syntax.
  */
 @RedisOptions(
         name = "annotated-cache",
-        connectionString = "${REDIS_URL:redis://localhost:6379/0}",
+        connectionString = "${REDIS_URL:-redis://localhost:6379/0}",
         maxPoolSize = 8,
         maxWaitingHandlers = 32,
         defaultConnection = true

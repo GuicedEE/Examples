@@ -9,10 +9,10 @@ import com.guicedee.vertx.redis.RedisOptions;
  */
 @RedisOptions(
         name = "secure-redis",
-        connectionString = "${REDIS_SECURE_URL:redis://secure-host:6380/0}",
-        password = "${REDIS_SECURE_PASSWORD:}",
+        connectionString = "${REDIS_SECURE_URL:-redis://secure-host:6380/0}",
+        password = "${REDIS_SECURE_PASSWORD:-}",
         tlsEnabled = true,
-        tlsCertPath = "${REDIS_TLS_CERT:/certs/redis-ca.crt}",
+        tlsCertPath = "${REDIS_TLS_CERT:-/certs/redis-ca.crt}",
         tlsVerifyHost = "HTTPS",
         protocol = RedisOptions.Protocol.RESP3,
         maxPoolSize = 4,

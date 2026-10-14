@@ -1,5 +1,7 @@
 package com.guicedee.examples.persistence.mongodb;
 
+import com.guicedee.client.Environment;
+
 import com.guicedee.persistence.implementations.mongodb.MongoConnectionInfo;
 import com.guicedee.persistence.implementations.mongodb.MongoModule;
 
@@ -21,10 +23,8 @@ public class ExampleMongoModule extends MongoModule<ExampleMongoModule> {
 
     @Override
     protected MongoConnectionInfo getMongoConnectionInfo() {
-        String connectionString = System.getProperty("MONGO_URL",
-                System.getenv().getOrDefault("MONGO_URL", "mongodb://localhost:27017"));
-        String databaseName = System.getProperty("MONGO_DB",
-                System.getenv().getOrDefault("MONGO_DB", "exampledb"));
+        String connectionString = Environment.getSystemPropertyOrEnvironment("MONGO_URL", "mongodb://localhost:27017");
+        String databaseName = Environment.getSystemPropertyOrEnvironment("MONGO_DB", "exampledb");
 
         return new MongoConnectionInfo()
                 .setName("example")

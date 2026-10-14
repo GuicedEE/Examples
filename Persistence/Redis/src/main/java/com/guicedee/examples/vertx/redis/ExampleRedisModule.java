@@ -1,5 +1,7 @@
 package com.guicedee.examples.vertx.redis;
 
+import com.guicedee.client.Environment;
+
 import com.guicedee.vertx.redis.RedisConnectionInfo;
 import com.guicedee.vertx.redis.RedisModule;
 
@@ -19,16 +21,11 @@ public class ExampleRedisModule extends RedisModule<ExampleRedisModule> {
 
     @Override
     protected RedisConnectionInfo getRedisConnectionInfo() {
-        String host = System.getProperty("REDIS_HOST",
-                System.getenv().getOrDefault("REDIS_HOST", "localhost"));
-        int port = Integer.parseInt(System.getProperty("REDIS_PORT",
-                System.getenv().getOrDefault("REDIS_PORT", "6379")));
-        int database = Integer.parseInt(System.getProperty("REDIS_DATABASE",
-                System.getenv().getOrDefault("REDIS_DATABASE", "0")));
-        String password = System.getProperty("REDIS_PASSWORD",
-                System.getenv().get("REDIS_PASSWORD"));
-        int maxPool = Integer.parseInt(System.getProperty("REDIS_MAX_POOL",
-                System.getenv().getOrDefault("REDIS_MAX_POOL", "8")));
+        String host = Environment.getSystemPropertyOrEnvironment("REDIS_HOST", "localhost");
+        int port = Integer.parseInt(Environment.getSystemPropertyOrEnvironment("REDIS_PORT", "6379"));
+        int database = Integer.parseInt(Environment.getSystemPropertyOrEnvironment("REDIS_DATABASE", "0"));
+        String password = Environment.getSystemPropertyOrEnvironment("REDIS_PASSWORD", "");
+        int maxPool = Integer.parseInt(Environment.getSystemPropertyOrEnvironment("REDIS_MAX_POOL", "8"));
 
         RedisConnectionInfo info = new RedisConnectionInfo()
                 .setName("example-redis")

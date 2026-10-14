@@ -7,7 +7,7 @@
  * LDAP provides AuthN only — combine with ABAC or another provider for AuthZ.
  */
 @LdapAuthOptions(
-    url = "${LDAP_URL:ldap://localhost:389}",
+    url = "${LDAP_URL:-ldap://localhost:389}",
     authenticationQuery = "uid={0},ou=users,dc=example,dc=com",
     authenticationMechanism = "simple",
     referral = "follow"

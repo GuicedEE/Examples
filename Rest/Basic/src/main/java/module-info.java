@@ -1,4 +1,5 @@
 module com.guicedee.examples.jaxrs.basic {
+    requires com.guicedee.guicedinjection;
 	requires transitive com.guicedee.rest;
 
 	requires java.net.http;

@@ -1,8 +1,9 @@
 package com.guicedee.examples.persistence.basic;
 
 import com.guicedee.client.IGuiceContext;
+import com.guicedee.guicedinjection.GuiceApplication;
 import com.guicedee.examples.persistence.basic.entities.User;
-import jakarta.inject.Inject;
+import com.google.inject.Inject;
 import org.hibernate.reactive.mutiny.Mutiny;
 
 import java.time.LocalDateTime;
@@ -34,9 +35,10 @@ public class PersistenceExample
 
         LocalDateTime startTime = LocalDateTime.now();
 
-        IGuiceContext.registerModule("com.guicedee.examples.persistence.basic");
-        IGuiceContext.instance()
-                .inject();
+        GuiceApplication.run(() -> {
+            IGuiceContext.registerModule("com.guicedee.examples.persistence.basic");
+            IGuiceContext.getContext().getConfig().setServiceLoadWithClassPath(true);
+        });
 
         LocalDateTime endTime = LocalDateTime.now();
         System.out.println("Persistence example started in " + ChronoUnit.MILLIS.between(startTime, endTime) + "ms");

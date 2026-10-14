@@ -1,6 +1,7 @@
 package com.guicedee.examples.graphql.basic;
 
 import com.guicedee.client.IGuiceContext;
+import com.guicedee.guicedinjection.GuiceApplication;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
@@ -28,9 +29,10 @@ public class GraphQLExample
 
         LocalDateTime startTime = LocalDateTime.now();
 
-        IGuiceContext.registerModule("com.guicedee.examples.graphql.basic");
-        IGuiceContext.instance()
-                .inject();
+        GuiceApplication.run(() -> {
+            IGuiceContext.registerModule("com.guicedee.examples.graphql.basic");
+            IGuiceContext.getContext().getConfig().setServiceLoadWithClassPath(true);
+        });
 
         LocalDateTime endTime = LocalDateTime.now();
         System.out.println("GraphQL example started in " + ChronoUnit.MILLIS.between(startTime, endTime) + "ms");

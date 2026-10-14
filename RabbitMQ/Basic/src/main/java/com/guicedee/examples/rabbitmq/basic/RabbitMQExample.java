@@ -1,9 +1,10 @@
 package com.guicedee.examples.rabbitmq.basic;
 
 import com.guicedee.client.IGuiceContext;
+import com.guicedee.guicedinjection.GuiceApplication;
 import com.guicedee.rabbit.QueuePublisher;
-import jakarta.inject.Inject;
-import jakarta.inject.Named;
+import com.google.inject.Inject;
+import com.google.inject.name.Named;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
@@ -22,9 +23,10 @@ public class RabbitMQExample
     {
         LocalDateTime startTime = LocalDateTime.now();
 
-        IGuiceContext.registerModule("com.guicedee.examples.rabbitmq.basic");
-        IGuiceContext.instance()
-                .inject();
+        GuiceApplication.run(() -> {
+            IGuiceContext.registerModule("com.guicedee.examples.rabbitmq.basic");
+            IGuiceContext.getContext().getConfig().setServiceLoadWithClassPath(true);
+        });
 
         LocalDateTime endTime = LocalDateTime.now();
         System.out.println("RabbitMQ example started in " + ChronoUnit.MILLIS.between(startTime, endTime) + "ms");

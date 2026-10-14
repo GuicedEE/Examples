@@ -1,4 +1,5 @@
 module com.guicedee.examples.hazelcast.queues {
+    requires com.guicedee.guicedinjection;
 
 	requires transitive com.guicedee.guicedhazelcast;
 

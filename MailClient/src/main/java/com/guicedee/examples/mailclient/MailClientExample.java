@@ -1,10 +1,11 @@
 package com.guicedee.examples.mailclient;
 
 import com.guicedee.client.IGuiceContext;
+import com.guicedee.guicedinjection.GuiceApplication;
 import com.guicedee.mailclient.MailConnectionOptions;
 import com.guicedee.mailclient.MailService;
-import jakarta.inject.Inject;
-import jakarta.inject.Named;
+import com.google.inject.Inject;
+import com.google.inject.name.Named;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
@@ -33,9 +34,10 @@ public class MailClientExample
     {
         LocalDateTime startTime = LocalDateTime.now();
 
-        IGuiceContext.registerModule("com.guicedee.examples.mailclient");
-        IGuiceContext.instance()
-                .inject();
+        GuiceApplication.run(() -> {
+            IGuiceContext.registerModule("com.guicedee.examples.mailclient");
+            IGuiceContext.getContext().getConfig().setServiceLoadWithClassPath(true);
+        });
 
         LocalDateTime endTime = LocalDateTime.now();
         System.out.println("Mail client example started in " + ChronoUnit.MILLIS.between(startTime, endTime) + "ms");

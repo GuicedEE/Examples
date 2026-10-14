@@ -1,6 +1,7 @@
 import com.guicedee.client.services.lifecycle.IGuiceModule;
 
 module com.guicedee.examples.vertx.grpc {
+    requires java.logging;
 	requires transitive com.guicedee.guicedinjection;
 	requires transitive io.vertx.grpc.server;
 	requires transitive io.vertx.grpc.client;

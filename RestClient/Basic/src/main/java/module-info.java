@@ -1,4 +1,5 @@
 module com.guicedee.examples.restclient.basic {
+    requires com.guicedee.guicedinjection;
 
 	requires transitive com.guicedee.rest.client;
 

@@ -1,11 +1,12 @@
 package com.guicedee.examples.auth.otp;
 
 import com.guicedee.vertx.auth.otp.IOtpAuthenticatorService;
-import io.smallrye.mutiny.Uni;
+import io.vertx.core.Future;
 import io.vertx.ext.auth.otp.Authenticator;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.function.Function;
 
 /**
  * In-memory OTP authenticator storage for demonstration purposes.
@@ -18,17 +19,18 @@ public class InMemoryOtpService implements IOtpAuthenticatorService
     private final Map<String, Authenticator> store = new ConcurrentHashMap<>();
 
     @Override
-    public Uni<Authenticator> fetch(String id)
+    public Function<String, Future<Authenticator>> authenticatorFetcher()
     {
-        Authenticator auth = store.get(id);
-        return auth != null ? Uni.createFrom().item(auth) : Uni.createFrom().nullItem();
+        return id -> Future.succeededFuture(store.get(id));
     }
 
     @Override
-    public Uni<Void> store(String id, Authenticator authenticator)
+    public Function<Authenticator, Future<Void>> authenticatorUpdater()
     {
-        store.put(id, authenticator);
-        return Uni.createFrom().voidItem();
+        return authenticator -> {
+            store.put(authenticator.getIdentifier(), authenticator);
+            return Future.succeededFuture();
+        };
     }
 }
 

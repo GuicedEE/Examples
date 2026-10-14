@@ -1,6 +1,7 @@
 package com.guicedee.examples.hazelcast.server;
 
 import com.guicedee.client.IGuiceContext;
+import com.guicedee.guicedinjection.GuiceApplication;
 import com.guicedee.guicedhazelcast.HazelcastServerOptions;
 import com.guicedee.guicedhazelcast.services.HazelcastPreStartup;
 import com.hazelcast.core.HazelcastInstance;
@@ -24,9 +25,10 @@ public class HazelcastServerExample
     {
         LocalDateTime startTime = LocalDateTime.now();
 
-        IGuiceContext.registerModule("com.guicedee.examples.hazelcast.server");
-        IGuiceContext.instance()
-                .inject();
+        GuiceApplication.run(() -> {
+            IGuiceContext.registerModule("com.guicedee.examples.hazelcast.server");
+            IGuiceContext.getContext().getConfig().setServiceLoadWithClassPath(true);
+        });
 
         LocalDateTime endTime = LocalDateTime.now();
         System.out.println("Hazelcast server example started in " + ChronoUnit.MILLIS.between(startTime, endTime) + "ms");

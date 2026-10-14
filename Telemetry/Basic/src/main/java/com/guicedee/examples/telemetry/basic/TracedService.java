@@ -1,7 +1,7 @@
 package com.guicedee.examples.telemetry.basic;
 
-import com.guicedee.telemetry.Trace;
-import com.guicedee.telemetry.SpanAttribute;
+import com.guicedee.telemetry.annotations.Trace;
+import com.guicedee.telemetry.annotations.SpanAttribute;
 
 /**
  * Service with @Trace annotations for automatic span creation.

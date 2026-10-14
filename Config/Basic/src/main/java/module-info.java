@@ -1,4 +1,5 @@
 module com.guicedee.examples.config.basic {
+    requires com.guicedee.guicedinjection;
 	requires transitive com.guicedee.microprofile.config;
 
 	exports com.guicedee.examples.config.basic;

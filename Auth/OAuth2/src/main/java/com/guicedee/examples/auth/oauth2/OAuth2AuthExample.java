@@ -1,6 +1,7 @@
 package com.guicedee.examples.auth.oauth2;
 
 import com.guicedee.client.IGuiceContext;
+import com.guicedee.guicedinjection.GuiceApplication;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
@@ -25,9 +26,10 @@ public class OAuth2AuthExample
 
         LocalDateTime startTime = LocalDateTime.now();
 
-        IGuiceContext.registerModule("com.guicedee.examples.auth.oauth2");
-        IGuiceContext.instance()
-                .inject();
+        GuiceApplication.run(() -> {
+            IGuiceContext.registerModule("com.guicedee.examples.auth.oauth2");
+            IGuiceContext.getContext().getConfig().setServiceLoadWithClassPath(true);
+        });
 
         LocalDateTime endTime = LocalDateTime.now();
         System.out.println("OAuth2 Auth example started in " + ChronoUnit.MILLIS.between(startTime, endTime) + "ms");

@@ -1,6 +1,7 @@
 package com.guicedee.examples.faulttolerance.basic;
 
 import com.guicedee.client.IGuiceContext;
+import com.guicedee.guicedinjection.GuiceApplication;
 
 /**
  * Demonstrates MicroProfile Fault Tolerance annotations with GuicedEE.
@@ -13,7 +14,10 @@ public class FaultToleranceExample
 {
     public static void main(String[] args)
     {
-        IGuiceContext.instance();
+        GuiceApplication.run(() -> {
+            IGuiceContext.registerModule("com.guicedee.examples.faulttolerance.basic");
+            IGuiceContext.getContext().getConfig().setServiceLoadWithClassPath(true);
+        });
 
         ResilientService service = IGuiceContext.get(ResilientService.class);
 

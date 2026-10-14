@@ -1,4 +1,5 @@
 module com.guicedee.examples.auth.oauth2 {
+    requires com.guicedee.guicedinjection;
 	requires transitive com.guicedee.rest;
 	requires transitive io.vertx.auth.oauth2;
 

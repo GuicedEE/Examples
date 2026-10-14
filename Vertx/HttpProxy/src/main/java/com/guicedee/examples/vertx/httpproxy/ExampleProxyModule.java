@@ -1,5 +1,7 @@
 package com.guicedee.examples.vertx.httpproxy;
 
+import com.guicedee.client.Environment;
+
 import com.guicedee.vertx.proxy.ProxyConnectionInfo;
 import com.guicedee.vertx.proxy.ProxyModule;
 
@@ -16,14 +18,10 @@ public class ExampleProxyModule extends ProxyModule<ExampleProxyModule> {
 
     @Override
     protected ProxyConnectionInfo getProxyConnectionInfo() {
-        String proxyHost = System.getProperty("PROXY_HOST",
-                System.getenv().getOrDefault("PROXY_HOST", "0.0.0.0"));
-        int proxyPort = Integer.parseInt(System.getProperty("PROXY_PORT",
-                System.getenv().getOrDefault("PROXY_PORT", "8080")));
-        String originHost = System.getProperty("PROXY_ORIGIN_HOST",
-                System.getenv().getOrDefault("PROXY_ORIGIN_HOST", "localhost"));
-        int originPort = Integer.parseInt(System.getProperty("PROXY_ORIGIN_PORT",
-                System.getenv().getOrDefault("PROXY_ORIGIN_PORT", "7070")));
+        String proxyHost = Environment.getSystemPropertyOrEnvironment("PROXY_HOST", "0.0.0.0");
+        int proxyPort = Integer.parseInt(Environment.getSystemPropertyOrEnvironment("PROXY_PORT", "8080"));
+        String originHost = Environment.getSystemPropertyOrEnvironment("PROXY_ORIGIN_HOST", "localhost");
+        int originPort = Integer.parseInt(Environment.getSystemPropertyOrEnvironment("PROXY_ORIGIN_PORT", "7070"));
 
         return new ProxyConnectionInfo()
                 .setName("api-gateway")

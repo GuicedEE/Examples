@@ -6,7 +6,8 @@ import io.vertx.redis.client.Redis;
 import io.vertx.redis.client.RedisAPI;
 import io.vertx.redis.client.Request;
 import io.vertx.redis.client.Command;
-import lombok.extern.log4j.Log4j2;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.List;
 
@@ -22,8 +23,8 @@ import java.util.List;
  *   <li>Key expiration (EXPIRE/TTL)</li>
  * </ul>
  */
-@Log4j2
 public class RedisUsageExample {
+    private static final Logger log = LogManager.getLogger(RedisUsageExample.class);
 
     @Inject
     private RedisAPI redis;

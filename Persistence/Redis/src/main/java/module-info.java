@@ -1,6 +1,7 @@
 import com.guicedee.client.services.lifecycle.IGuiceModule;
 
 module com.guicedee.examples.vertx.redis {
+    requires org.apache.logging.log4j;
 	requires transitive com.guicedee.guicedinjection;
 	requires transitive io.vertx.redis.client;
 

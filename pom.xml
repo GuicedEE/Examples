@@ -12,7 +12,7 @@
     <url>https://github.com/GuicedEE/Examples</url>
 
     <properties>
-        <guicedee.version>2.5.0</guicedee.version>
+        <guicedee.version>2.5.1</guicedee.version>
         <maven.compiler.release>25</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <examples.runtimeImageDirectory>${project.build.directory}/jlink-image</examples.runtimeImageDirectory>
